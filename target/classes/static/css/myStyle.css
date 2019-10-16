@@ -2,23 +2,205 @@
 	position:absolute;
 	right:3px;
 	top:1px;
-	
+
 }
 
 #id_conectare{
-	
+
 	position:absolute;
-	
+
 	right:200px;
-	top:1px;	
+	top:1px;
 }
 
 
 
-#id_search{
-	
-	position:absoute;
-	width:10%;
-	
-	
+#carousel{
+
+
+	height:450px;
+
+
 }
+
+#id_div_bandName{
+	position:absolute;
+
+	left:32%;
+
+
+}
+
+#id_div_noMembers{
+	position:absolute;
+	top:20%;
+	left:32%;
+
+}
+
+
+#id_div_email{
+	position:absolute;
+	top:30%;
+	left:32%;
+
+}
+
+#id_div_noConcerts{
+
+	position:absolute;
+	top:40%;
+	left:32%;
+
+}
+
+
+
+#id_div_city{
+	position:absolute;
+	top:50%;
+	left:32%;
+
+
+}
+
+#id_div_password{
+	position:absolute;
+	top:60%;
+	left:32%;
+
+}
+
+#id_div_confPass{
+	position:absolute;
+	top:70%;
+	left:32%;
+}
+
+#id_btn_submitBand{
+	position:absolute;
+	top:85%;
+	left:38%;
+
+
+
+	background-color: white;
+	color: black;
+	border: 2px solid tomato;
+    font-weight: bold;
+    font-size: 100%;
+
+	border-radius:12px;
+
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.8s;
+
+}
+
+#id_btn_submitBand:hover{
+	background-color: tomato;
+	color: white;
+    font-weight: bold;
+    font-size: 100%;
+
+}
+
+
+
+
+#validationServer015{
+
+	width:45%;
+
+}
+
+#validationServer025{
+
+	width:45%;
+}
+
+#validationServerUsername55{
+	width:50%;
+
+}
+
+
+#validationServer055{
+	width:45%;
+}
+
+#validationServer035{
+	width:45%;
+}
+
+#validationServer045{
+
+	width:45%;
+}
+
+#confPassword{
+
+	width:45%;
+}
+
+#search_event{
+
+	width: 200%;
+
+   }
+
+
+#id_div_search{
+
+position: absolute;
+    left:35%;
+
+}
+
+
+.navbar, .navbar-inverse {
+    background: tomato !important;
+    border-color: #000 !important;
+}
+
+
+#id_div_card{
+
+	position:absolute;
+	width:35%;
+	left:31%;
+	top:18%;
+
+
+}
+
+.card-header{
+	background-color:tomato !important;
+	font-weight: bold !important;
+}
+
+
+.btn-rounded{
+
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	background-color: white;
+	color: black !important;
+	border-radius:14px;
+	border-color:black !important;
+	font-weight: bold !important;
+
+}
+
+.card-header{
+	background-color:tomato !important;
+}
+
+
+.btn-rounded:hover{
+	background-color: tomato !important;
+	color: white !important;
+
+}
+
+

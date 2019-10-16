@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
 
 
 <body>
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1" th:fragment="navigationBar" >
-    <a class="navbar-brand" href="#">Navbar</a>
+
+    <a class="navbar-brand" href="#">
+
+        <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
+             alt="logo" height="30" width="40" />
+
+
+    </a>
+
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -21,9 +30,9 @@
 
         </ul>
 
-        <form class="form-inline" id="id_search">
-            <div class="md-form my-0" >
-                <input class="form-control mr-sm-2" type="text" placeholder="Cauta  un eveniment" aria-label="Search">
+        <form class="form-inline"  >
+            <div class="md-form my-0" id="id_div_search" >
+                <input class="form-control mr-sm-2" type="text" placeholder="Cauta  un eveniment sau o trupa" aria-label="Search" id="search_event" >
             </div>
         </form>
 
