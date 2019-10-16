@@ -29,6 +29,10 @@ public class MainController {
         return "LogIn";
     }
 
+    @GetMapping("/modal")
+    public String modal(){
+        return "modalRegister";
+    }
 
 }
 
