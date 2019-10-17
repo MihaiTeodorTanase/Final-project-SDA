@@ -2,10 +2,14 @@
 <html lang="ro" xmlns:th="http://www.thymeleaf.org">
 
 
-<body>
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1" th:fragment="navigationBar" >
 
-    <a class="navbar-brand" href="#">
+
+<body>
+
+<div th:fragment="navigationBar">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1"  >
+
+    <a th:href="@{/}" class="navbar-brand" >
 
         <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
              alt="logo" height="30" width="40" />
@@ -22,10 +26,10 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item" >
-                <a class="nav-link" href="#">Evenimente</a>
+                <a th:href="@{/evenimente}" class="nav-link"  >Evenimente</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" th:text="#{index.bandstab}"></a>
+                <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bandstab}"></a>
             </li>
 
         </ul>
@@ -37,17 +41,41 @@
         </form>
 
 
-        <ul class="navbar-nav mr-auto" >
-            <li class="nav-item" id="id_inregistrare">
-                <a class="nav-link" th:href="@{}">Inregistreaza-te</a>
+
+
+            <ul class="navbar-nav">
+            <li style="float:right">
+<!--                nav-item dropdown-->
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Inregistreaza-te ca
+                </a>
+                <div class="dropdown-menu dropdown-secondary " aria-labelledby="navbarDropdownMenuLink-555" id="id_content_dropDown">
+                    <a th:href="@{/formBand}" class="dropdown-item">Trupa</a>
+                    <a th:href="@{/formSpectator}" class="dropdown-item" >Spectator</a>
+
+                </div>
             </li>
 
+            </li>
+
+
             <li class="nav-item" id="id_conectare">
-                <a class="nav-link" href="#">Conecteaza-te</a>
+                <a th:href="@{/formLogin}" class="nav-link" >Conecteaza-te</a>
             </li>
         </ul>
 
     </div>
+
+
+
+
 </nav>
+
+
+
+
+</div>
+
 </body>
 </html>

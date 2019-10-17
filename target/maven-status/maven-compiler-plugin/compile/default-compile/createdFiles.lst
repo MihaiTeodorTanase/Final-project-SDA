@@ -1,0 +1,6 @@
+com\proiectfinal\MainController.class
+com\proiectfinal\repositories\UserRepository.class
+com\proiectfinal\FinalProjectApplication.class
+com\proiectfinal\services\UserService.class
+com\proiectfinal\entities\UserModel.class
+com\proiectfinal\services\UserServiceImpl.class
