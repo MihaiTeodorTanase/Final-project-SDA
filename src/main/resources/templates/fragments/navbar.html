@@ -53,7 +53,7 @@
 <!--                nav-item dropdown-->
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Inregistreaza-te ca
+                   aria-haspopup="true" aria-expanded="false" th:text="#{index.register}" >
                 </a>
                 <div class="dropdown-menu dropdown-secondary " aria-labelledby="navbarDropdownMenuLink-555" id="id_content_dropDown">
                     <a th:href="@{/formBand}" class="dropdown-item">Trupa</a>
@@ -63,19 +63,6 @@
             </li>
 
 
-        <ul class="navbar-nav mr-auto" >
-            <li class="nav-item" id="id_inregistrare">
-                <a class="nav-link" th:text="#{index.register}"></a>
-
-            </li>
-
-
-            <li class="nav-item" id="id_conectare">
-
-                <a th:href="@{/formLogin}" class="nav-link" href="#" th:text="#{index.connect}"></a>
-
-            </li>
-        </ul>
     </ul>
 
     </div>

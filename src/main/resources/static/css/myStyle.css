@@ -14,22 +14,13 @@
     font-weight: bold;
 }
 
-
-<<<<<<< HEAD
 #carousel {
-
-
     height: 450px;
-
-
 }
 
-=======
-
-#id_div_bandName{
-	position:absolute;
->>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
-
+#id_div_bandName {
+    position: absolute;
+}
 #id_div_bandName {
     position: absolute;
 
