@@ -15,20 +15,15 @@
 
 
 
-#carousel{
-
-
-	height:450px;
-
-
-}
-
 #id_div_bandName{
 	position:absolute;
 
 	left:32%;
 
 
+}
+.img {
+	object-fit: contain;
 }
 
 #id_div_noMembers{
