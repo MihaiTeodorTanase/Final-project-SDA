@@ -6,14 +6,12 @@
 
 <body>
 
-<<<<<<< HEAD
 <div th:fragment="navigationBar">
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1"  >
 
-    <a th:href="@{/}" class="navbar-brand" >
-=======
+
+
     <a class="navbar-brand" th:href="@{/}">
->>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
 
         <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
              alt="logo" height="30" width="40" />
@@ -26,22 +24,20 @@
             aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item" >
-<<<<<<< HEAD
-                <a th:href="@{/evenimente}" class="nav-link"  >Evenimente</a>
+
+                <a class="nav-link" th:href="@{/evenimente}" th:text="#{index.events}"></a>
             </li>
             <li class="nav-item">
-                <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bandstab}"></a>
-=======
-                <a class="nav-link" th:text="#{index.events}"></a>
+                <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bands}"></a>
+
+
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" th:text="#{index.bands}"></a>
->>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
-            </li>
+
 
         </ul>
 
@@ -52,10 +48,7 @@
         </form>
 
 
-<<<<<<< HEAD
-
-
-            <ul class="navbar-nav">
+    <ul class="navbar-nav">
             <li style="float:right">
 <!--                nav-item dropdown-->
             <li class="dropdown">
@@ -69,27 +62,26 @@
                 </div>
             </li>
 
-=======
+
         <ul class="navbar-nav mr-auto" >
             <li class="nav-item" id="id_inregistrare">
                 <a class="nav-link" th:text="#{index.register}"></a>
->>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
+
             </li>
 
 
             <li class="nav-item" id="id_conectare">
-<<<<<<< HEAD
-                <a th:href="@{/formLogin}" class="nav-link" >Conecteaza-te</a>
-=======
-                <a class="nav-link" href="#" th:text="#{index.connect}"></a>
->>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
+
+                <a th:href="@{/formLogin}" class="nav-link" href="#" th:text="#{index.connect}"></a>
+
             </li>
         </ul>
+    </ul>
 
     </div>
 
 
-
+</nav>
 
 </nav>
 
