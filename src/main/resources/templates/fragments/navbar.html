@@ -49,6 +49,10 @@
 
 
     <ul class="navbar-nav">
+        <li class="nav-item" >
+
+            <a class="nav-link" th:href="@{/formLogin}" th:text="#{index.connect}"></a>
+        </li>
             <li style="float:right">
 <!--                nav-item dropdown-->
             <li class="dropdown">
@@ -58,11 +62,8 @@
                 <div class="dropdown-menu dropdown-secondary " aria-labelledby="navbarDropdownMenuLink-555" id="id_content_dropDown">
                     <a th:href="@{/formBand}" class="dropdown-item">Trupa</a>
                     <a th:href="@{/formSpectator}" class="dropdown-item" >Spectator</a>
-
                 </div>
             </li>
-
-
     </ul>
 
     </div>
