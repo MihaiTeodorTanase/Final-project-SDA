@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$" libraries="{bootstrap, jquery, popper}" />
+=======
+    <file url="file://$PROJECT_DIR$" libraries="{bootstrap, jquery}" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
   </component>
 </project>

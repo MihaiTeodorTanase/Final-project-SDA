@@ -15,6 +15,7 @@
 }
 
 
+<<<<<<< HEAD
 #carousel {
 
 
@@ -23,6 +24,11 @@
 
 }
 
+=======
+
+#id_div_bandName{
+	position:absolute;
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
 
 #id_div_bandName {
     position: absolute;
@@ -30,6 +36,9 @@
     left: 40%;
 
 
+}
+.img {
+	object-fit: contain;
 }
 
 #id_div_noMembers {

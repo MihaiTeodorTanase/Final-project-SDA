@@ -39,6 +39,10 @@ UserService userService;
         return "LogIn";
     }
 
+    @GetMapping("/modal")
+    public String modal(){
+        return "modalRegister";
+    }
 
     @GetMapping("/evenimente")
         public String evenimente(){

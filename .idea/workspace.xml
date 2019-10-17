@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="3731de06-1dc1-4354-b6e5-704fe6d25faa" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_9_RELEASE.xml" afterDir="false" />
@@ -11,9 +12,13 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/proiectfinal/config/SpringSecurityConfiguration.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/evenimente.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/trupe.html" afterDir="false" />
+=======
+    <list default="true" id="3fc37bc5-5eae-4b86-8d40-c0f053c4f941" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proiectfinal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proiectfinal.iml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proiectfinal/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/proiectfinal/users/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/proiectfinal/services/UserService.java" beforeDir="false" />
@@ -41,6 +46,14 @@
       <change beforePath="$PROJECT_DIR$/target/classes/templates/registerBand.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registerBand.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/registerSpectator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registerSpectator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/proiectfinal.kotlin_module" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/myStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/carousel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/myStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments/carousel.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments/carousel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,6 +82,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,22 +122,48 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/carousel.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="87" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/config/SpringSecurityConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/myStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/config/PasswordEncoderProducer.java">
           <provider selected="true" editor-type-id="text-editor" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
+              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            </state>
+          </provider>
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
         </entry>
       </file>
     </leaf>
@@ -140,6 +180,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>jdbc</find>
+<<<<<<< HEAD
       <find>@{</find>
       <find>formSpectator</find>
       <find>th:</find>
@@ -155,6 +196,9 @@
       <find>id_div_</find>
       <find>id_div_car</find>
       <find>.card</find>
+=======
+      <find>carousel</find>
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,10 +239,10 @@
         <option value="$PROJECT_DIR$/src/main/java/web/WebConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/messages.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/messages_ro.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/fragments/navbar.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/modal.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/proiectfinal/users/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proiectfinal/users/UserServiceImpl.java" />
@@ -217,6 +261,15 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/formSpectator.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/proiectfinal/users/UserService.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/resources/messages.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/modalRegister.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/myStyle.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/carousel.html" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       </list>
     </option>
   </component>
@@ -239,10 +292,16 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
+=======
+    <option name="x" value="500" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -254,6 +313,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,6 +337,7 @@
               <item name="proiectfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -331,6 +392,8 @@
               <item name="proiectfinal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,7 +402,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proiectfinal" type="b2602c69:ProjectViewProjectNode" />
@@ -348,13 +411,11 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="fragments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,12 +438,16 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\templates" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com" />
       <recent name="com.proiectfinal" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\static" />
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\templates" />
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources" />
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\java\com\proiectfinal" />
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\java\com\proiectfinal\proiectfinal" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.proiectfinal" />
@@ -390,12 +455,18 @@
       <recent name="com.proiectfinal.dto" />
       <recent name="com.proiectfinal.proiectfinal.entities" />
     </key>
+<<<<<<< HEAD
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\oprea\Desktop\Java\proiectfinal\src\main\java\com\proiectfinal\config" />
       <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\static" />
       <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\templates" />
       <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources" />
       <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\java\com\proiectfinal" />
+=======
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\static\images" />
+      <recent name="C:\Users\Mihai\IdeaProjects\proiectfinal\src\main\resources\templates" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
     </key>
   </component>
   <component name="RunDashboard">
@@ -454,13 +525,20 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35809000" />
+=======
+    <option name="totallyTimeSpent" value="19054000" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.40268457" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -470,18 +548,27 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28045326" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14164306" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.36827195" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.194051" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -490,6 +577,16 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.11208054" />
+=======
+      <window_info anchor="bottom" id="Messages" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.18993288" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -517,6 +614,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/constraint/FieldMatch.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/constraint/FieldMatchValidator.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/web/dto/UserRegistrationDto.java" />
+<<<<<<< HEAD
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b2ee958f-6b52-4fc4-9883-5c84936dcadf/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/entities/UserModel.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -563,6 +661,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="22" selection-start-column="22" selection-end-column="22" />
+=======
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b2ee958f-6b52-4fc4-9883-5c84936dcadf/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registration.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/LogIn.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/845b962c-6a47-48c0-8596-8efac0c55e89/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6dfe2059-e401-4864-95e2-5ba2ea2c2d0f/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/web/WebConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
         </state>
       </provider>
     </entry>
@@ -571,6 +696,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/scss/core/bootstrap/_rfs.scss">
       <provider selected="true" editor-type-id="text-editor" />
+<<<<<<< HEAD
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/FinalProjectApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -609,16 +735,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/logo.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages_ro.properties">
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/messages.properties">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/entities/UserModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/services/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/FinalProjectApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/modalRegister.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding>
+            <element signature="e#397#404#1" expanded="true" />
+          </folding>
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="61" selection-start-line="61" selection-end-line="61" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
           <folding>
             <element signature="e#2#16#0" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -626,6 +816,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/registerBand.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -646,10 +837,23 @@
           <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="27" column="67" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
+          <folding>
+            <element signature="e#2#14#0" expanded="true" />
+            <element signature="e#2#13#0" expanded="true" />
+            <element signature="e#2#14#0" expanded="true" />
+            <element signature="e#2#16#0" expanded="true" />
+            <element signature="e#2#15#0" expanded="true" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/myStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -692,11 +896,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/proiectfinal/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/myStyle.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="341">
           <caret line="60" column="55" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="55" />
           <folding>
@@ -721,6 +932,19 @@
             <element signature="imports" expanded="true" />
             <element signature="e#554#555#0" expanded="true" />
             <element signature="e#590#591#0" expanded="true" />
+=======
+        <state relative-caret-position="277">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/carousel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="87" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> 0421779a72cd7cb79dc4e9c3edc4cd1f653983c6
           </folding>
         </state>
       </provider>
