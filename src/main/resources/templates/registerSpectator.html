@@ -18,13 +18,85 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/myStyle.css" rel="stylesheet">
     <title>Inregistreaza-te</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<header th:insert="fragments/formSpectator.html :: formSpectator"></header>
 
+<!--<header th:insert="fragments/formSpectator :: formSpectator"></header>-->
+<form th:action="@{/formSpectator}" th:object="${spectator}" method="post" th:fragment="formSpectator">
+
+    <div class="form-row">
+        <div class="col-md-4 mb-3 md-form" id="id_div_bandName">
+            <label for="validationServer015"></label>
+            <input th:field="*{username}"  type="text" class="form-control is-valid" placeholder="Username" id="validationServer015" value="" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+<!--                <div class="col-md-4 mb-3 md-form" id="id_div_noMembers">-->
+<!--                    <label for="validationServer025"></label>-->
+<!--                    <input type="text" class="form-control is-valid" placeholder="Nume" id="validationServer025" value="" required>-->
+<!--                    <div class="valid-feedback">-->
+<!--                        Looks good!-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--        -->
+<!--                <div class="col-md-4 mb-3 md-form" id="id_div_email">-->
+<!--                    <label for="validationServerUsername55"></label>-->
+<!--                    <input type="text" class="form-control is-invalid" placeholder="Prenume" id="validationServerUsername55" required>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Please choose a valid email-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-md-3 mb-3 md-form" id="id_div_noConcerts">
+                <label for="validationServer055"></label>
+                <input  th:field="*{email}" type="email" class="form-control is-invalid" placeholder="Email" id="validationServer055" required>
+                <div class="invalid-feedback">
+                    Please provide a valid number
+                </div>
+            </div>
+
+
+<!--            <div class="form-row">-->
+<!--                <div class="col-md-6 mb-3 md-form" id="id_div_city">-->
+<!--                    <label for="validationServer035"></label>-->
+<!--                    <input type="text" class="form-control is-invalid" placeholder="Oras" id="validationServer035" required>-->
+<!--                    <div class="invalid-feedback">-->
+<!--                        Please provide a valid city.-->
+<!--                    </div>-->
+<!--                </div>-->
+
+        <div class="col-md-6 mb-3 md-form" id="id_div_password">
+            <label for="validationServer045"></label>
+            <input th:field="*{password}" type="password" class="form-control is-invalid" placeholder="Parola" id="validationServer045" required>
+            <div class="invalid-feedback">
+                Please provide a valid password
+            </div>
+        </div>
+
+<!--        <div class="col-md-6 mb-3 md-form" id="id_div_confPass">-->
+<!--            <label for="validationServer045"></label>-->
+<!--            <input type="password" class="form-control is-invalid" placeholder="Confirma parola" id="confPassword" required>-->
+<!--            <div class="invalid-feedback">-->
+<!--                Please provide a valid password-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    </div>
+
+    <button  id="id_btn_submitBand" type="submit">Inregistrare</button>
+</form>
 
 </body>
 </html>

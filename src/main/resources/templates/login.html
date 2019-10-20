@@ -2,12 +2,37 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <title>Conecteaza-te</title>
+
+
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/myStyle.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 </head>
 <body>
 
+<header th:insert="fragments/navbar.html :: navigationBar"></header>
+
 
 <div class="card" id="id_div_card" th:fragment="form_connect">
+
 
     <h5 class="card-header  white-text text-center py-4" >
         <strong>Conecteaza-te pentru a putea fi la curent cu ultimele evenimente</strong>
@@ -17,11 +42,11 @@
     <div class="card-body px-lg-5 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;" action="#!" >
+        <form th:action="@{/login}" method="post">
 
             <!-- Email -->
             <div class="md-form">
-                <input type="email" id="materialLoginFormEmail" class="form-control" placeholder="Username-ul sau numele trupei">
+                <input type="text" id="materialLoginFormEmail" class="form-control"  placeholder="Username-ul sau numele trupei" autofocus="autofocus" >
                 <label for="materialLoginFormEmail" ></label>
             </div>
 
@@ -50,30 +75,17 @@
 
             <!-- Register -->
             <p><strong>Alaturate comunitatii!</strong>
-                <a href="">Inregistreaza-te</a>
-            </p>
-            <p>sau</p>
-            <!-- Social login -->
-            <p>logheaza-te folosind:</p>
-            <a type="button" class="btn-floating btn-fb btn-sm">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a type="button" class="btn-floating btn-tw btn-sm">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a type="button" class="btn-floating btn-li btn-sm">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a type="button" class="btn-floating btn-git btn-sm">
-                <i class="fab fa-github"></i>
-            </a>
+
 
         </form>
         <!-- Form -->
 
     </div>
 
+
 </div>
+
+
 
 
 </body>

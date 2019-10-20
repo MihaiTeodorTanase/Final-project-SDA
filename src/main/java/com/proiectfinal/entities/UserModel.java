@@ -1,18 +1,45 @@
 package com.proiectfinal.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 
 @Entity
 public class UserModel{
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  private String name;
+    private Long id;
+
+  @Column(unique = true)
+  @NotBlank()
+  private String username;
+
+  @NotBlank(message = "Introduceti parola")
   private String password;
+
+  @Column(unique = true)
+  private String email;
+
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  @Enumerated(EnumType.STRING)
+  private Role role;
+
+  public Role getRole() {
+    return role;
+  }
+
+  public void setRole(Role role) {
+    this.role = role;
+  }
 
   public Long getId() {
     return id;
@@ -22,12 +49,12 @@ public class UserModel{
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public String getUsername() {
+    return username;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUsername(String name) {
+    this.username = name;
   }
 
   public String getPassword() {
