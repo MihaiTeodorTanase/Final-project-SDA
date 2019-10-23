@@ -1,19 +1,10 @@
 package com.proiectfinal.entities.users;
 
-import org.springframework.stereotype.Controller;
-
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 
 
-@Entity
-@Table(name = "info")
 @Embeddable
 public class Info {
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String bandName;
 
@@ -23,40 +14,23 @@ public class Info {
 
     private int noConcerts;
 
-    public int getNoConcerts() {
-        return noConcerts;
-    }
-
-    public void setNoConcerts(int noConcerts) {
-        this.noConcerts = noConcerts;
-    }
-//spectator
-
     private String name;
 
     private String first_name;
 
-//    @OneToOne(mappedBy = "info",
-//            cascade = CascadeType.ALL,
-//            fetch = FetchType.LAZY
-//
-//    )
-    private UserModel userModel;
-
-    public UserModel getUserModel() {
-        return userModel;
+    public Info() {
     }
 
-    public void setUserModel(UserModel userModel) {
-        this.userModel = userModel;
+    public Info(String bandName, int noMembers, String city, int noConcerts) {
+        this.bandName = bandName;
+        this.noMembers = noMembers;
+        this.city = city;
+        this.noConcerts = noConcerts;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Info(String name, String first_name) {
+        this.name = name;
+        this.first_name = first_name;
     }
 
     public String getBandName() {
@@ -81,6 +55,14 @@ public class Info {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public int getNoConcerts() {
+        return noConcerts;
+    }
+
+    public void setNoConcerts(int noConcerts) {
+        this.noConcerts = noConcerts;
     }
 
     public String getName() {

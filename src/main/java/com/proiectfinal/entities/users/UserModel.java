@@ -23,11 +23,19 @@ public class UserModel{
   @Column(unique = true)
   private String email;
 
-
-//  @OneToOne
-//  @JoinColumn(name = "info_id")
   @Embedded
+  @AttributeOverrides({
+          @AttributeOverride( name = "info_firstName", column = @Column(name = "first_name")),
+          @AttributeOverride( name = "info_lastName", column = @Column(name = "name")),
+          @AttributeOverride( name = "info_band_name", column = @Column(name = "bandName")),
+          @AttributeOverride( name = "info_noMembers", column = @Column(name = "noMembers")),
+          @AttributeOverride( name = "info_city", column = @Column(name = "city")),
+          @AttributeOverride( name = "info_noConcerts", column = @Column(name = "noConcerts"))
+  })
   private Info info;
+
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
   public Info getInfo() {
     return info;
@@ -44,9 +52,6 @@ public class UserModel{
   public void setEmail(String email) {
     this.email = email;
   }
-
-  @Enumerated(EnumType.STRING)
-  private Role role;
 
   public Role getRole() {
     return role;

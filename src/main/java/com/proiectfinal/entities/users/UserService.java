@@ -19,17 +19,14 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-
     private UserRepository userRepository;
 
-    private InforRepository inforRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository,InforRepository inforRepository) {
+    public UserService(UserRepository userRepository) {
 
         this.userRepository = userRepository;
-        this.inforRepository=inforRepository;
+
     }
 
 
@@ -37,11 +34,39 @@ public class UserService implements UserDetailsService {
         String pass = userModel.getPassword();
         String cript = bCryptPasswordEncoder.encode(pass);
         userModel.setPassword(cript);
-
+        userModel.setInfo(new Info());
         return userRepository.saveAndFlush(userModel);
-
-
     }
+
+    public Optional<UserModel> update(String username,Info newInfo){
+        Optional<UserModel> existingClassroommodel = userRepository.findByUsername(username);
+        if(existingClassroommodel.isPresent()){
+            UserModel userModel = existingClassroommodel.get();
+            Info oldInfo = userModel.getInfo();
+            if(newInfo.getBandName() == null ||newInfo.getBandName().isEmpty() ){
+               newInfo.setBandName(oldInfo.getBandName());
+            }
+            if(newInfo.getCity() == null || newInfo.getCity().isEmpty()){
+                newInfo.setCity(oldInfo.getCity());
+            }
+            if(newInfo.getFirst_name() == null || newInfo.getFirst_name().isEmpty()){
+                newInfo.setFirst_name(oldInfo.getFirst_name());
+            }
+            if(newInfo.getName() == null || newInfo.getName().isEmpty()){
+                newInfo.setName(oldInfo.getName());
+            }
+            if(newInfo.getNoConcerts()==0){
+                newInfo.setNoConcerts(oldInfo.getNoConcerts());
+            }
+            if(newInfo.getNoMembers()==0 ){
+                newInfo.setNoMembers(oldInfo.getNoMembers());
+            }
+            userModel.setInfo(newInfo);
+            return Optional.of(userRepository.saveAndFlush(userModel));
+        }
+        return Optional.empty();
+    }
+
 
     public List<UserModel> findAll() {
         return userRepository.findAll();
@@ -62,11 +87,6 @@ public class UserService implements UserDetailsService {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
     }
 
-
-    public Info saveInfo(Info info) {
-        return inforRepository.saveAndFlush(info);
-
-    }
 
 
 }
