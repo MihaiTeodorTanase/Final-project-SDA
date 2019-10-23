@@ -31,61 +31,64 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
+<div class="container">
+    <hr>
 
-<!--<header th:insert="fragments/formSpectator :: formSpectator"></header>-->
+
+
+
 <form th:action="@{/registerForm}" th:object="${spectator}" method="post" th:fragment="formSpectator">
-
-    <div class="form-row">
-        <div class="col-md-4 mb-3 md-form" id="id_div_bandName">
-            <label for="validationServer015"></label>
-            <input th:field="*{username}"  type="text" class="form-control is-valid" placeholder="Username" id="validationServer015" value="" required>
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-            <div class="col-md-3 mb-3 md-form" id="id_div_email">
-                <label for="validationServer055"></label>
-                <input  th:field="*{email}" type="email" class="form-control is-invalid" placeholder="Email" id="validationServer055" required>
-                <div class="invalid-feedback">
-                    Please provide a valid number
-                </div>
-            </div>
-        <div class="col-md-6 mb-3 md-form" id="id_div_password">
-            <label for="validationServer045"></label>
-            <input th:field="*{password}" type="password" class="form-control is-invalid" placeholder="Parola" id="validationServer045" required>
-            <div class="invalid-feedback">
-                Please provide a valid password
-            </div>
-        </div>
-        <div class="col-md-6 mb-3 md-form" id="id_div_confPass">
-            <label for="validationServer045"></label>
-            <input type="password" class="form-control is-invalid" placeholder="Confirma parola" id="confPassword" required>
-            <div class="invalid-feedback">
-                Please provide a valid password
-            </div>
-        </div>
-        <!-- Material unchecked -->
-        <div id="checkboxesForm">
-        <label for="form-check">Inregistreaza-te ca:</label>
-        <div class="form-check" id="form-check">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                <label class="form-check-label" for="exampleRadios1">
-                    Spectator
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                <label class="form-check-label" for="exampleRadios2">
-                    Trupa
-                </label>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <button  id="id_btn_submitBand" type="submit">Inregistrare</button>
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Create Account</h4>
+            <p class="divider-text">
+                <span class="bg-light">OR</span>
+            </p>
+            <form>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input id="regUsername"minlength="5" maxlength="15" name="" th:field="*{username}" class="form-control" placeholder="Username" type="text" required>
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input id="regEmail" name="" class="form-control" th:field="*{email}" placeholder="Email address" type="email" required>
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                    </div>
+                    <select class="form-control" name="exampleRadios" required>
+                        <option selected="" value=""> Select user type</option>
+                        <option value="option1">Spectator</option>
+                        <option value="option2">Band</option>
+                    </select>
+                </div> <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" name="password" id="password" th:field="*{password}" placeholder="Create password" type="password" required>
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" name="confirm_password" id="confirm_password" placeholder="Repeat password" type="password" required>
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <button id="submitReg" type="submit" class="btn btn-block"> Create Account  </button>
+                </div> <!-- form-group// -->
+                <p class="text-center">Have an account? <a href="" th:href="@{/login}">Log In</a> </p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
 </form>
+</div>
+
 
 </body>
 </html>
