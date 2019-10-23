@@ -24,11 +24,13 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/", "/index").permitAll()
+        http.authorizeRequests().antMatchers("/", "/index")
+                .permitAll()
                 .and().authorizeRequests().antMatchers("/static/css/**", "/js/**", "/images/**", "/**/favicon.ico").permitAll()
                 .and().authorizeRequests().antMatchers("/login", "logout").permitAll()
                 .and().authorizeRequests().antMatchers("/admin").authenticated()
                 .and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll()
+                .and().logout().logoutSuccessUrl("/").permitAll()
         ;
 
         http.csrf().disable(); // disable CRSF

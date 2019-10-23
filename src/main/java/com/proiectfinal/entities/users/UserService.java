@@ -1,10 +1,6 @@
-package com.proiectfinal.users;
+package com.proiectfinal.entities.users;
 
-import com.proiectfinal.config.PasswordEncoderProducer;
-import com.proiectfinal.entities.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,7 +55,7 @@ public class UserService implements UserDetailsService {
 
     private List getAuthority(UserModel userModel) {
 
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_"+"USER")); //TODO:replace user role by userModel.getRole(),can be user,admin ...
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_"+userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
     }
 
 

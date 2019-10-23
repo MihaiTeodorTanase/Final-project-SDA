@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clubs</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/myStyle.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header th:insert="fragments/navbar.html :: navigationBar"></header>
+
+
+<!--TODO :filtre-->
+
+<main class="grid">
+    <article>
+        <img src="http://pluspng.com/img-png/png-pub--750.png" alt="Sample photo">
+        <div class="text">
+            <h3>Pub Rock</h3>
+            <p>Pub Rock este un pub plin de surprize...</p>
+            <a  class="btn btn-warning" th:href="@{/clubs/PubRock}" >Vezi clubul</a>
+            <p align="center">Capacitate:100 persoane</p>
+            <p align="center">Bucuresti</p>
+        </div>
+    </article>
+    <article>
+        <img src="http://jibsstudents.com/wp-content/uploads/2016/04/a-1.png" alt="Sample photo">
+        <div class="text">
+            <h3>Jubel Pub</h3>
+            <p>Jubel Pub este in loc in care.....</p>
+            <button>Vezi clubul</button>
+            <p align="center">Capacitate:150 persoane</p>
+            <p align="center">Cluj</p>
+        </div>
+    </article>
+    <article>
+        <img src="https://discoveryspace.org/wp-content/uploads/2018/03/Science-Pub-logo-500x500.png"
+             alt="Sample photo">
+        <div class="text">
+            <h3>Science Pub</h3>
+            <p>Science Pub este un loc in care ......</p>
+            <button>Vezi clubul</button>
+            <p align="center">Capacitate:200 persoane</p>
+            <p align="center">Timisoara</p>
+        </div>
+    </article>
+    <article>
+        <img src="https://www.pubonmainwatkinsville.com/wp-content/uploads/2018/06/Pub-On-Main-Logo.png"
+             alt="Sample photo">
+        <div class="text">
+            <h3>Vatkinsville</h3>
+            <p>Vatkinsville este un loc in care...</p>
+            <button>Vezi clubul</button>
+            <p align="center">Capacitate:250 persoane</p>
+            <p align="center">Bucuresti</p>
+        </div>
+    </article>
+    <article>
+        <img src="https://pngimage.net/wp-content/uploads/2018/06/pub-logo-png-8.png" alt="Sample photo">
+        <div class="text">
+            <h3>Dexter's Pub</h3>
+            <p>Dexter's Pub este un loc in care...</p>
+            <br><br><br><br>
+            <button>Vezi clubul</button>
+            <p align="center">Capacitate:300 persoane</p>
+            <p align="center">Cluj</p>
+        </div>
+    </article>
+    <article>
+        <img src="https://cyclepub.com/wp-content/uploads/2016/02/CyclePubLogo_Sp_3C_Ornge_x2.png" alt="Sample photo">
+        <div class="text">
+            <h3>Cycle Pub</h3>
+            <p>Cycle Pub este un loc in care...</p>
+            <button>Vezi clubul</button>
+            <p align="center">Capacitate:270 persoane</p>
+            <p align="center">Timisoara</p>
+        </div>
+    </article>
+
+
+</main>
+
+
+</body>
+</html>

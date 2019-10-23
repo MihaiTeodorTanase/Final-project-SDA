@@ -1,4 +1,4 @@
-package com.proiectfinal.entities;
+package com.proiectfinal.config;
 
 public enum Role {
 

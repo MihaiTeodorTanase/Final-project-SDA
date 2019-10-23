@@ -1,6 +1,5 @@
-package com.proiectfinal.users;
+package com.proiectfinal.entities.users;
 
-import com.proiectfinal.entities.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

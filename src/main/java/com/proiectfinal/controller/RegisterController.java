@@ -1,16 +1,16 @@
 package com.proiectfinal.controller;
 
-import com.proiectfinal.config.PasswordEncoderProducer;
 import com.proiectfinal.config.SpringSecurityConfiguration;
-import com.proiectfinal.entities.Role;
-import com.proiectfinal.entities.UserModel;
-import com.proiectfinal.users.UserService;
+import com.proiectfinal.config.Role;
+import com.proiectfinal.entities.users.UserModel;
+import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -26,20 +26,26 @@ public class RegisterController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/formSpectator")
+    @GetMapping("/registerForm")
     public String formSpectator(Model model) {
         model.addAttribute("spectator", new UserModel());
 
-        return "registerSpectator";
+        return "register";
     }
 
 
-    @PostMapping("/formSpectator")
-    public String addUser(@Valid UserModel user, BindingResult result) {
+    @PostMapping("/registerForm")
+    public String addUser(@Valid UserModel user, BindingResult result,@RequestParam("exampleRadios") String role) {
         if (result.hasErrors()) {
-            return "formSpectator";
+            return "register";
         }
-        user.setRole(Role.Spectator);
+        if(role.equals("option1")){
+            user.setRole(Role.Spectator);
+        }
+        else{
+            user.setRole(Role.Trupa);
+        }
+
 
         userService.add(user);
         System.out.println("User "+user.getUsername()+" has been added in db");

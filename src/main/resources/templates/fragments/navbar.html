@@ -1,79 +1,90 @@
 <!DOCTYPE html>
-<html lang="ro" xmlns:th="http://www.thymeleaf.org">
-
-
+<html lang="ro" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 
 <body>
 
 <div th:fragment="navigationBar">
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1"  >
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
 
 
+        <a class="navbar-brand" th:href="@{/}">
 
-    <a class="navbar-brand" th:href="@{/}">
-
-        <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
-             alt="logo" height="30" width="40" />
-
-
-    </a>
+            <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
+                 alt="logo" height="30" width="40"/>
 
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-        <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item" >
-
-                <a class="nav-link" th:href="@{/evenimente}" th:text="#{index.events}"></a>
-            </li>
-            <li class="nav-item">
-                <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bands}"></a>
+        </a>
 
 
-            </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+                aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+            <ul class="navbar-nav mr-auto">
 
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/evenimente}" th:text="#{index.events}"></a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bands}"></a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_Trupa')">
+                    <a th:href="@{/clubs}" class="nav-link">Clubs</a>
+                </li>
 
-        <form class="form-inline"  >
-            <div class="md-form my-0" id="id_div_search" >
-                <input class="form-control mr-sm-2" type="text" th:placeholder="#{index.search}" aria-label="Search" id="search_event" >
-            </div>
-        </form>
+            </ul>
 
-
-    <ul class="navbar-nav">
-        <li class="nav-item" >
-
-            <a class="nav-link" th:href="@{/login}" th:text="#{index.connect}"></a>
-        </li>
-            <li style="float:right">
-<!--                nav-item dropdown-->
-            <li class="dropdown">
-                <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false" th:text="#{index.register}" >
-                </a>
-                <div class="dropdown-menu dropdown-secondary " aria-labelledby="navbarDropdownMenuLink-555" id="id_content_dropDown">
-                    <a th:href="@{/formBand}" class="dropdown-item">Trupa</a>
-                    <a th:href="@{/formSpectator}" class="dropdown-item" >Spectator</a>
+            <form class="form-inline">
+                <div class="md-form my-0" id="id_div_search">
+                    <input class="form-control mr-sm-2" type="text" th:placeholder="#{index.search}" aria-label="Search"
+                           id="search_event">
                 </div>
-            </li>
-    </ul>
-
-    </div>
+            </form>
 
 
-</nav>
+            <ul class="navbar-nav" sec:authorize="isAnonymous()">
+                <li class="nav-item">
 
-</nav>
+                    <a class="nav-link" th:href="@{/login}" th:text="#{index.connect}"></a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" th:href="@{/registerForm}" th:text="#{index.register}"></a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto nav-flex-icons" sec:authorize="isAuthenticated()">
+                <li class="nav-item" id="notificationAnvelope">
+                    <a class="nav-link waves-effect waves-light">1
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </li>
+                <li class="nav-item avatar dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle" id="profilePic"
+                             alt="avatar image">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+                         aria-labelledby="navbarDropdownMenuLink-55">
+                        <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Spectator')">Profile</a>
+                        <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Spectator')">My tickets</a>
+                        <a class="dropdown-item" href="#" th:href="@{/BandProfile}" sec:authorize="hasRole('ROLE_Trupa')">Profile</a>
+                        <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Trupa')">My events</a>
+                        <a class="dropdown-item" th:href="@{/logout}">Log out</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
 
 
+    </nav>
+
+    </nav>
 
 
 </div>

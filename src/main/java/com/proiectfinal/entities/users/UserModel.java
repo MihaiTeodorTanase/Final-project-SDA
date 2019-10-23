@@ -1,4 +1,6 @@
-package com.proiectfinal.entities;
+package com.proiectfinal.entities.users;
+
+import com.proiectfinal.config.Role;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
