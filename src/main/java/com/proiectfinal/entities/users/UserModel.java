@@ -24,6 +24,19 @@ public class UserModel{
   private String email;
 
 
+//  @OneToOne
+//  @JoinColumn(name = "info_id")
+  @Embedded
+  private Info info;
+
+  public Info getInfo() {
+    return info;
+  }
+
+  public void setInfo(Info info) {
+    this.info = info;
+  }
+
   public String getEmail() {
     return email;
   }

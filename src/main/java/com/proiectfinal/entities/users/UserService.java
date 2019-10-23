@@ -23,15 +23,19 @@ public class UserService implements UserDetailsService {
 
     private UserRepository userRepository;
 
+    private InforRepository inforRepository;
+
     @Autowired
-    public UserService(UserRepository userRepository){
-        this.userRepository=userRepository;
+    public UserService(UserRepository userRepository,InforRepository inforRepository) {
+
+        this.userRepository = userRepository;
+        this.inforRepository=inforRepository;
     }
 
 
     public UserModel add(UserModel userModel) {
-        String pass=userModel.getPassword();
-       String cript= bCryptPasswordEncoder.encode(pass);
+        String pass = userModel.getPassword();
+        String cript = bCryptPasswordEncoder.encode(pass);
         userModel.setPassword(cript);
 
         return userRepository.saveAndFlush(userModel);
@@ -39,29 +43,30 @@ public class UserService implements UserDetailsService {
 
     }
 
-    public List<UserModel> findAll(){
+    public List<UserModel> findAll() {
         return userRepository.findAll();
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<UserModel> byUsername=userRepository.findByUsername(username);
-        if(!byUsername.isPresent()){
-            throw  new UsernameNotFoundException("user not found");
+        Optional<UserModel> byUsername = userRepository.findByUsername(username);
+        if (!byUsername.isPresent()) {
+            throw new UsernameNotFoundException("user not found");
         }
-       UserModel userModel=byUsername.get();
-        return new User(userModel.getUsername(),userModel.getPassword(),getAuthority(userModel));
+        UserModel userModel = byUsername.get();
+        return new User(userModel.getUsername(), userModel.getPassword(), getAuthority(userModel));
     }
 
     private List getAuthority(UserModel userModel) {
 
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_"+userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
     }
 
 
+    public Info saveInfo(Info info) {
+        return inforRepository.saveAndFlush(info);
 
-
-
+    }
 
 
 }

@@ -72,7 +72,7 @@
                          aria-labelledby="navbarDropdownMenuLink-55">
                         <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Spectator')">Profile</a>
                         <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Spectator')">My tickets</a>
-                        <a class="dropdown-item" href="#" th:href="@{/BandProfile}" sec:authorize="hasRole('ROLE_Trupa')">Profile</a>
+                        <a class="dropdown-item" href="#" th:href="@{/myband}" sec:authorize="hasRole('ROLE_Trupa')">Profile</a>
                         <a class="dropdown-item" href="#" sec:authorize="hasRole('ROLE_Trupa')">My events</a>
                         <a class="dropdown-item" th:href="@{/logout}">Log out</a>
                     </div>

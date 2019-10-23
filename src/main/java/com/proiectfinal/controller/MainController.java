@@ -34,8 +34,6 @@ public class MainController {
     @GetMapping("/clubs/PubRock")
     public String PubRock() {return "PubRock";}
 
-    @GetMapping("/BandProfile")
-    public String profileBand(){return "ProfileBand";}
 
 
 

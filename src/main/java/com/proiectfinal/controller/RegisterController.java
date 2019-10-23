@@ -2,6 +2,7 @@ package com.proiectfinal.controller;
 
 import com.proiectfinal.config.SpringSecurityConfiguration;
 import com.proiectfinal.config.Role;
+import com.proiectfinal.entities.users.Info;
 import com.proiectfinal.entities.users.UserModel;
 import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,13 @@ public class RegisterController {
 
     private SpringSecurityConfiguration springSecurityConfiguration;
 
-    @Autowired
+
     private UserService userService;
+
+    @Autowired
+    public RegisterController(UserService userService){
+        this.userService=userService;
+    }
 
     @GetMapping("/registerForm")
     public String formSpectator(Model model) {
@@ -53,4 +59,28 @@ public class RegisterController {
         return "index";
 
     }
+
+
+    @GetMapping("/myband")
+    public String myband(Model model){
+        model.addAttribute("userInfo",new Info());
+
+        return "ProfileBand";
+    }
+
+    @PostMapping("/myband")
+    public String addUserInfo(@Valid Info info, BindingResult result){
+        if(result.hasErrors()){
+            return "ProfileBand";
+        }
+
+        userService.saveInfo(info);
+        System.out.println("Info added");
+
+        return "index";
+    }
+
+
+
+
 }
