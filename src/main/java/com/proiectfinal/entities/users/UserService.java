@@ -38,27 +38,27 @@ public class UserService implements UserDetailsService {
         return userRepository.saveAndFlush(userModel);
     }
 
-    public Optional<UserModel> update(String username,Info newInfo){
+    public Optional<UserModel> update(String username, Info newInfo) {
         Optional<UserModel> existingClassroommodel = userRepository.findByUsername(username);
-        if(existingClassroommodel.isPresent()){
+        if (existingClassroommodel.isPresent()) {
             UserModel userModel = existingClassroommodel.get();
             Info oldInfo = userModel.getInfo();
-            if(newInfo.getBandName() == null ||newInfo.getBandName().isEmpty() ){
-               newInfo.setBandName(oldInfo.getBandName());
+            if (newInfo.getBandName() == null || newInfo.getBandName().isEmpty()) {
+                newInfo.setBandName(oldInfo.getBandName());
             }
-            if(newInfo.getCity() == null || newInfo.getCity().isEmpty()){
+            if (newInfo.getCity() == null || newInfo.getCity().isEmpty()) {
                 newInfo.setCity(oldInfo.getCity());
             }
-            if(newInfo.getFirst_name() == null || newInfo.getFirst_name().isEmpty()){
+            if (newInfo.getFirst_name() == null || newInfo.getFirst_name().isEmpty()) {
                 newInfo.setFirst_name(oldInfo.getFirst_name());
             }
-            if(newInfo.getName() == null || newInfo.getName().isEmpty()){
+            if (newInfo.getName() == null || newInfo.getName().isEmpty()) {
                 newInfo.setName(oldInfo.getName());
             }
-            if(newInfo.getNoConcerts()==0){
+            if (newInfo.getNoConcerts() == 0) {
                 newInfo.setNoConcerts(oldInfo.getNoConcerts());
             }
-            if(newInfo.getNoMembers()==0 ){
+            if (newInfo.getNoMembers() == 0) {
                 newInfo.setNoMembers(oldInfo.getNoMembers());
             }
             userModel.setInfo(newInfo);
@@ -66,17 +66,18 @@ public class UserService implements UserDetailsService {
         }
         return Optional.empty();
     }
-    public Optional<UserModel> getByUsername(String username){
+
+    public Optional<UserModel> getByUsername(String username) {
         Optional<UserModel> existing = userRepository.findByUsername(username);
-        if(existing.isPresent()){
+        if (existing.isPresent()) {
             return userRepository.findByUsername(username);
         }
         return Optional.empty();
     }
 
-    public Optional<UserModel> getByEmail(String email){
+    public Optional<UserModel> getByEmail(String email) {
         Optional<UserModel> existing = userRepository.findByEmail(email);
-        if(existing.isPresent()){
+        if (existing.isPresent()) {
             return userRepository.findByEmail(email);
         }
         return Optional.empty();
@@ -101,6 +102,10 @@ public class UserService implements UserDetailsService {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
     }
 
+
+    public Optional<UserModel> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 
 
 }

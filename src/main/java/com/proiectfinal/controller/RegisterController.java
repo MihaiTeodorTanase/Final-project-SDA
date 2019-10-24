@@ -8,6 +8,7 @@ import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -68,23 +69,45 @@ public class RegisterController {
     }
 
 
-    @GetMapping("/profile")
+    @GetMapping("/editProfile")
     public String myband(Model model){
         model.addAttribute("userInfo",new Info());
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user=(User)auth.getPrincipal();
+        Optional<UserModel> userModel=userService.findByUsername(user.getUsername());
+        model.addAttribute("user",userModel.get().getInfo());
+        return "editProfile";
+    }
+
+
+    @GetMapping("/profile")
+    public String editProfile(Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        User user=(User)auth.getPrincipal();
+        Optional<UserModel> userModel=userService.findByUsername(user.getUsername());
+        model.addAttribute("user",userModel.get().getInfo());
+
+
         return "profile";
     }
 
-    @PostMapping("/profile")
+
+    @PostMapping("/editProfile")
     public String addUserInfo(@Valid Info info, BindingResult result){
         if(result.hasErrors()){
-            return "profile";
+            return "editProfile";
         }
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         userService.update(auth.getName(),info);
 
         System.out.println("Info added");
-        return "index";
+        return "redirect:profile";
     }
+
+
+
 
 
 
