@@ -27,102 +27,117 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<form th:action="@{/profile}" th:object="${userInfo}" method="post">
-<div class="container">
-    <h1 align="center">Edit Profile</h1>
-    <hr>
-    <div class="row">
-        <!-- left column -->
-        <div class="col-md-3">
-            <div class="text-center">
-                <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
-                <h6>Upload a relevant photo...</h6>
+<form>
+    <div class="container">
+        <h1 align="center">Edit Profile</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3" sec:authorize="hasRole('ROLE_Spectator')">
+                <div class="text-center">
+                    <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
 
-                <input type="file" class="form-control">
+                </div>
             </div>
-        </div>
 
-        <!-- edit form column -->
-        <div class="col-md-9 personal-info" sec:authorize="hasRole('ROLE_Spectator')">
-            <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-coffee"></i>
-                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+            <!-- edit form column -->
+            <div>
+                <div class="col-md-9 personal-info" sec:authorize="hasRole('ROLE_Spectator')" th:object="${user}">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a>
+                        <i class="fa fa-coffee"></i>
+                        This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    <h3>Spectator info</h3>
+
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">First name</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{first_name}"></h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Last name:</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{name}"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group" align="center">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-8">
+                                <a class="btn btn-primary" value="Edit Profile" th:href="@{/editProfile}">Edit
+                                    Profile</a>
+                                <span></span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3>Band info</h3>
 
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">First name:</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{first_name}" class="form-control" type="text" name="First name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Last name:</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{name}" class="form-control" type="text" name="name">
-                    </div>
-                </div>
-                <div class="form-group" align="center">
-                    <label class="col-md-3 control-label"></label>
-                    <div class="col-md-8">
-                        <input type="submit" class="btn btn-primary" value="Save Changes">
-                        <span></span>
-                        <input type="reset" class="btn btn-default" value="Cancel">
-                    </div>
-                </div>
-            </form>
-        </div>
+            <!-- edit form column -->
 
-        <!-- edit form column -->
-        <div class="col-md-9 personal-info" sec:authorize="hasRole('ROLE_Trupa')">
-            <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-coffee"></i>
-                This is an <strong>.alert</strong>. Use this to show important messages to the user.
+            <div class="row" sec:authorize="hasRole('ROLE_Trupa')">
+                <div class="col-md-3">
+                    <div class="text-center">
+                        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+
+                    </div>
+                </div>
             </div>
-            <h3>Band info</h3>
 
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Band name:</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{bandName}" class="form-control" type="text" name="bandName">
+            <div>
+                <div class="col-md-9 personal-info" sec:authorize="hasRole('ROLE_Trupa')" th:object="${user}">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a>
+                        <i class="fa fa-coffee"></i>
+                        This is an <strong>.alert</strong>. Use this to show important messages to the user.
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Number of members:</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{noMembers}" class="form-control" type="number" name="noMembers">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">City:</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{city}" class="form-control" type="text" name="city">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Number of concerts</label>
-                    <div class="col-lg-8">
-                        <input th:field="*{noConcerts}" class="form-control" type="number" name="noConcerts">
-                    </div>
-                </div>
+                    <h3>Band info</h3>
 
-                <div class="form-group" align="center">
-                    <label class="col-md-3 control-label"></label>
-                    <div class="col-md-8">
-                        <input type="submit" class="btn btn-primary" value="Save Changes">
-                        <span></span>
-                        <input type="reset" class="btn btn-default" value="Cancel">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Band name:</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{bandName}"></h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Number of members:</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{noMembers}"></h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">City:</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{city}"></h5>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Number of concerts</label>
+                            <div class="col-lg-8">
+                                <h5 th:text="*{noConcerts}"></h5>
+                            </div>
+                        </div>
+
+                        <div class="form-group" align="center">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-8">
+                                <a class="btn btn-primary" value="Edit Profile" th:href="@{/editProfile}">Edit
+                                    Profile</a>
+                                <span></span>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
-</form>
 
+</form>
 </body>
 </html>
