@@ -252,7 +252,6 @@
 }
 
 form input[id="regUsername"]:focus:invalid, form input[type="email"]:focus:invalid, form input[type="password"]:focus:invalid {
-    background: url(images/invalid.png);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 95% 50%;
@@ -263,7 +262,6 @@ form input[id="regUsername"]:focus:invalid, form input[type="email"]:focus:inval
     color: maroon;
 }
 form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[type="password"]:valid {
-    background: url(images/valid.png);
     background-size: 20px;
     background-repeat: no-repeat;
     background-position: 95% 50%;

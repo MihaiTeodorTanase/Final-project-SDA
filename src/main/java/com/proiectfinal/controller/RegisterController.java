@@ -42,8 +42,8 @@ public class RegisterController {
     @PostMapping("/registerForm")
     public String addUser(@ModelAttribute("user") @Valid UserModel user, BindingResult result, @RequestParam("exampleRadios") String role) {
 
-        Optional existingUsername = userService.getByUsername(user.getUsername());
-        Optional existingEmail = userService.getByEmail(user.getEmail());
+        Optional existingUsername = userService.getByUsername(user.getUsername().trim());
+        Optional existingEmail = userService.getByEmail(user.getEmail().trim());
         if(existingUsername.isPresent()){
             result.rejectValue("username",null,"Username already in use!");
         }

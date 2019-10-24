@@ -27,6 +27,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="customscripts/confirmPassword.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"
+            type="text/javascript"></script>
 </head>
 <body>
 
@@ -54,12 +56,13 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
 
-                    <input id="regUsername"minlength="5" maxlength="15" name="" oninput="" th:field="*{username}" class="form-control" placeholder="Username" type="text" required>
+                    <input id="regUsername"minlength="5" maxlength="15" name="" oninput="validate()" th:field="*{username}"  class="form-control" placeholder="Username" type="text" required>
 
                 </div> <!-- form-group// -->
                 <p class="error-message"
                    th:each="error: ${#fields.errors('email')}"
                    th:text="${error}">Validation error</p>
+
                 <div class="form-group input-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
