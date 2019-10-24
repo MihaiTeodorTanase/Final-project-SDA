@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 
 @Controller
@@ -32,14 +33,23 @@ public class RegisterController {
 
     @GetMapping("/registerForm")
     public String formSpectator(Model model) {
-        model.addAttribute("spectator", new UserModel());
+        model.addAttribute("user", new UserModel());
 
         return "register";
     }
 
 
     @PostMapping("/registerForm")
-    public String addUser(@Valid UserModel user, BindingResult result,@RequestParam("exampleRadios") String role) {
+    public String addUser(@ModelAttribute("user") @Valid UserModel user, BindingResult result, @RequestParam("exampleRadios") String role) {
+
+        Optional existingUsername = userService.getByUsername(user.getUsername());
+        Optional existingEmail = userService.getByEmail(user.getEmail());
+        if(existingUsername.isPresent()){
+            result.rejectValue("username",null,"Username already in use!");
+        }
+        if(existingEmail.isPresent()){
+            result.rejectValue("email",null,"Email address already in use!");
+        }
         if (result.hasErrors()) {
             return "register";
         }
@@ -49,7 +59,6 @@ public class RegisterController {
         else{
             user.setRole(Role.Trupa);
         }
-
 
         userService.add(user);
         System.out.println("User "+user.getUsername()+" has been added in db");

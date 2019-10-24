@@ -66,7 +66,21 @@ public class UserService implements UserDetailsService {
         }
         return Optional.empty();
     }
+    public Optional<UserModel> getByUsername(String username){
+        Optional<UserModel> existing = userRepository.findByUsername(username);
+        if(existing.isPresent()){
+            return userRepository.findByUsername(username);
+        }
+        return Optional.empty();
+    }
 
+    public Optional<UserModel> getByEmail(String email){
+        Optional<UserModel> existing = userRepository.findByEmail(email);
+        if(existing.isPresent()){
+            return userRepository.findByEmail(email);
+        }
+        return Optional.empty();
+    }
 
     public List<UserModel> findAll() {
         return userRepository.findAll();

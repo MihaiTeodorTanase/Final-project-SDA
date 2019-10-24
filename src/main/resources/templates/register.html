@@ -26,6 +26,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="customscripts/confirmPassword.js"></script>
 </head>
 <body>
 
@@ -37,7 +38,7 @@
 
 
 
-<form th:action="@{/registerForm}" th:object="${spectator}" method="post" th:fragment="formSpectator">
+<form th:action="@{/registerForm}" th:object="${user}" method="post" th:fragment="formSpectator">
     <div class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 400px;">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
@@ -45,13 +46,21 @@
                 <span class="bg-light">OR</span>
             </p>
             <form>
-                <div class="form-group input-group">
+                <p class="error-message"
+                   th:each="error: ${#fields.errors('username')}"
+                   th:text="${error}">Validation error</p>
+                <div class="form-group input-group" th:classappend="${#fields.hasErrors('username')}? 'has-error':''">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input id="regUsername"minlength="5" maxlength="15" name="" th:field="*{username}" class="form-control" placeholder="Username" type="text" required>
+
+                    <input id="regUsername"minlength="5" maxlength="15" name="" oninput="" th:field="*{username}" class="form-control" placeholder="Username" type="text" required>
+
                 </div> <!-- form-group// -->
-                <div class="form-group input-group">
+                <p class="error-message"
+                   th:each="error: ${#fields.errors('email')}"
+                   th:text="${error}">Validation error</p>
+                <div class="form-group input-group" th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
@@ -71,13 +80,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" name="password" id="password" th:field="*{password}" placeholder="Create password" type="password" required>
+                    <input class="form-control" name="password" minlength="5" maxlength="15" id="password" th:field="*{password}" placeholder="Create password" type="password" required="required">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" name="confirm_password" id="confirm_password" placeholder="Repeat password" type="password" required>
+                    <input class="form-control" name="confirm_password" id="confirm_password" oninput="check(this)" placeholder="Repeat password" type="password" required="required">
                 </div> <!-- form-group// -->
                 <div class="form-group">
                     <button id="submitReg" type="submit" class="btn btn-block"> Create Account  </button>

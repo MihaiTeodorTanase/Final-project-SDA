@@ -1,8 +1,8 @@
-
-function validatePassword(password,confirm_password){
-    if(password.value != confirm_password.value) {
-        confirm_password.setCustomValidity("Passwords Don't Match");
+function check(input) {
+    if (input.value != document.getElementById('password').value) {
+        input.setCustomValidity('Password Must be Matching.');
     } else {
-        confirm_password.setCustomValidity('');
+        // input is valid -- reset the error message
+        input.setCustomValidity('');
     }
 }
