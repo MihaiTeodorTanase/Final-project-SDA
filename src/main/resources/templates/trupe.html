@@ -5,7 +5,6 @@
     <title>Trupe</title>
 
 
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -20,6 +19,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/myStyle.css" rel="stylesheet">
 
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -32,7 +32,28 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<h1>Salut din trupe</h1>
+<h1>Filtre</h1>
+
+
+<main class="grid" th:object="${bands}" >
+
+    <article th:each="band: ${bands}">
+        <img src="http://vectorlogofree.com/wp-content/uploads/2014/03/3672-rdio-circle-icon-vector-icon-vector-eps.png" alt="Sample photo">
+        <div class="div">
+            <h3 th:text="${band.bandName}" class="card-title"></h3>
+
+            <p> Descriere.....</p>
+
+            <a  class="btn btn-warning"  >Vezi trupa</a>
+            <br>
+            <b align="center" >Numar concerte:</b>
+            <b th:text="${band.NoConcerts}" align="center" class="card-text"></b>
+            <br>
+            <b th:align="center" th:text="${band.city} "  class="card-text">Oras</b>
+        </div>
+    </article>
+
+</main>
 
 </body>
 </html>

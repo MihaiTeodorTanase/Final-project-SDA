@@ -1,5 +1,6 @@
 package com.proiectfinal.entities.users;
 
+import com.proiectfinal.config.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -106,6 +107,9 @@ public class UserService implements UserDetailsService {
     public Optional<UserModel> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
+
+
 
 
 }

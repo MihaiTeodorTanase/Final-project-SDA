@@ -26,10 +26,10 @@
             <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/evenimente}" th:text="#{index.events}"></a>
+                    <a class="nav-link" th:href="@{/events}" th:text="#{index.events}"></a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{/trupe}" class="nav-link" th:text="#{index.bands}"></a>
+                    <a th:href="@{/bands}" class="nav-link" th:text="#{index.bands}"></a>
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('ROLE_Trupa')">
                     <a th:href="@{/clubs}" class="nav-link">Clubs</a>
