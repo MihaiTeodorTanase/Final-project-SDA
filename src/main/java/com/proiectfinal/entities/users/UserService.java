@@ -61,6 +61,9 @@ public class UserService implements UserDetailsService {
             if (newInfo.getNoMembers() == 0) {
                 newInfo.setNoMembers(oldInfo.getNoMembers());
             }
+            if(newInfo.getImage() == null || newInfo.getImage().length==0){
+                newInfo.setImage(oldInfo.getImage());
+            }
             userModel.setInfo(newInfo);
             return Optional.of(userRepository.saveAndFlush(userModel));
         }
@@ -106,6 +109,7 @@ public class UserService implements UserDetailsService {
     public Optional<UserModel> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
 
 
 }
