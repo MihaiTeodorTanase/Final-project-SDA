@@ -1,5 +1,6 @@
 package com.proiectfinal.entities.users;
 
+import com.proiectfinal.config.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -112,4 +113,9 @@ public class UserService implements UserDetailsService {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e1f2654f40d0f706f623a88868e9f08b27d10dee
 }

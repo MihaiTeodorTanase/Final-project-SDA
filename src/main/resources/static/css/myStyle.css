@@ -25,8 +25,9 @@
 
 
 }
+
 .img {
-	object-fit: contain;
+    object-fit: contain;
 }
 
 
@@ -51,16 +52,16 @@
     left: 40%;
 }
 
-#checkboxesForm{
+#checkboxesForm {
     position: absolute;
-    top:55%;
-    left:40%;
+    top: 55%;
+    left: 40%;
 }
 
 .grid {
     position: absolute;
-    top:10%;
-    left:25%;
+    top: 10%;
+    left: 25%;
 
     display: inline-grid;
 
@@ -71,18 +72,22 @@
     grid-column-gap: 125px;
 
 }
+
 .grid > article {
 
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
+
 .grid > article img {
     max-width: 100%;
     min-width: 99%;
 }
+
 .text {
     padding: 0 20px 20px;
 }
+
 .text > button {
     background: gray;
     border: 0;
@@ -169,11 +174,10 @@
 }
 
 .navbar, .navbar-inverse {
-    background: #900C3F  !important;
+    background: #900C3F !important;
     border-color: #000 !important;
     height: 60px;
 }
-
 
 
 #id_div_card {
@@ -191,7 +195,7 @@
     font-weight: bold !important;
 }
 
-.card-footer{
+.card-footer {
     background-color: #900C3F !important;
 }
 
@@ -220,16 +224,15 @@
 }
 
 
-
-#navbarDropdownMenuLink-555{
+#navbarDropdownMenuLink-555 {
     font-weight: bold !important;
-    color:white;
+    color: white;
 }
 
 
-.dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu {
     display: block !important;
-    background-color:white !important;
+    background-color: white !important;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -237,9 +240,9 @@
 
 }
 
-.nav-link{
-    font-weight: bold ;
-    color:white;
+.nav-link {
+    font-weight: bold;
+    color: white;
 
 }
 
@@ -247,8 +250,9 @@
     height: 45px;
 }
 
-#notificationAnvelope{
-    Margin: auto; !important
+#notificationAnvelope {
+    Margin: auto;
+!important
 }
 
 form input[id="regUsername"]:focus:invalid, form input[type="email"]:focus:invalid, form input[type="password"]:focus:invalid {
@@ -261,6 +265,7 @@ form input[id="regUsername"]:focus:invalid, form input[type="email"]:focus:inval
     box-shadow: 0px 0px 8px -3px red;
     color: maroon;
 }
+
 form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[type="password"]:valid {
     background-size: 20px;
     background-repeat: no-repeat;
@@ -273,12 +278,14 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
 .divider-text span {
     padding: 7px;
     font-size: 12px;
     position: relative;
     z-index: 2;
 }
+
 .divider-text:after {
     content: "";
     position: absolute;
@@ -293,18 +300,19 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
     background-color: #405D9D;
     color: #fff;
 }
+
 .btn-twitter {
     background-color: #42AEEC;
     color: #fff;
 }
 
-#submitReg{
-    background-color: #900C3F ;  !important;
+#submitReg {
+    background-color: #900C3F;
+!important;
     color: white;
 }
 
-#regEmail
-{
+#regEmail {
     padding-right: 32px;
 }
 
@@ -313,3 +321,11 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+
+
+
+
+
+
+

@@ -21,11 +21,9 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 
@@ -80,24 +78,24 @@ public class RegisterController {
 
 
     @GetMapping("/editProfile")
-    public String myband(Model model){
-        model.addAttribute("userInfo",new Info());
+    public String myband(Model model) {
+        model.addAttribute("userInfo", new Info());
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        User user=(User)auth.getPrincipal();
-        Optional<UserModel> userModel=userService.findByUsername(user.getUsername());
-        model.addAttribute("user",userModel.get().getInfo());
+        User user = (User) auth.getPrincipal();
+        Optional<UserModel> userModel = userService.findByUsername(user.getUsername());
+        model.addAttribute("user", userModel.get().getInfo());
         return "editProfile";
     }
 
 
     @GetMapping("/profile")
-    public String editProfile(Model model){
+    public String editProfile(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-        User user=(User)auth.getPrincipal();
-        Optional<UserModel> userModel=userService.findByUsername(user.getUsername());
-        model.addAttribute("user",userModel.get().getInfo());
+        User user = (User) auth.getPrincipal();
+        Optional<UserModel> userModel = userService.findByUsername(user.getUsername());
+        model.addAttribute("user", userModel.get().getInfo());
 
 
         return "profile";
@@ -105,8 +103,8 @@ public class RegisterController {
 
 
     @PostMapping("/editProfile")
-    public String addUserInfo(@RequestParam("avatar")MultipartFile file,@Valid Info info, BindingResult result){
-        if(result.hasErrors()){
+    public String addUserInfo(@RequestParam("avatar") MultipartFile file, @Valid Info info, BindingResult result) {
+        if (result.hasErrors()) {
             return "redirect:profile";
         }
         try {
@@ -116,7 +114,7 @@ public class RegisterController {
             e.printStackTrace();
         }
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        userService.update(auth.getName(),info);
+        userService.update(auth.getName(), info);
 
         System.out.println("Info added");
         return "redirect:profile";
@@ -131,8 +129,14 @@ public class RegisterController {
             UserModel userModel = (UserModel) existing.get();
             response.setContentType("image/jpeg, image/jpg, image/png, image/gif");
             try {
-                response.getOutputStream().write(userModel.getInfo().getImage());
-                response.getOutputStream().close();
+                if (userModel.getInfo().getImage() != null) {
+                    response.getOutputStream().write(userModel.getInfo().getImage());
+                    response.getOutputStream().close();
+                }else{
+                    response.getOutputStream().write(Files.readAllBytes(Paths.get("src/main/resources/images/emptyProfilePic.png")));
+                    response.getOutputStream().close();
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
