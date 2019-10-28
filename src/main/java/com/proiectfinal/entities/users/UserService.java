@@ -62,7 +62,7 @@ public class UserService implements UserDetailsService {
             if (newInfo.getNoMembers() == 0) {
                 newInfo.setNoMembers(oldInfo.getNoMembers());
             }
-            if(newInfo.getImage() == null || newInfo.getImage().length==0){
+            if (newInfo.getImage() == null || newInfo.getImage().length == 0) {
                 newInfo.setImage(oldInfo.getImage());
             }
             userModel.setInfo(newInfo);
@@ -110,12 +110,4 @@ public class UserService implements UserDetailsService {
     public Optional<UserModel> findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
-
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e1f2654f40d0f706f623a88868e9f08b27d10dee
 }

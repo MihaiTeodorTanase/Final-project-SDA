@@ -82,7 +82,7 @@
             <div class="row" sec:authorize="hasRole('ROLE_Trupa')">
                 <div class="col-md-3">
                     <div class="text-center">
-                        <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+                        <img th:src="@{/getAvatar}" src="//placehold.it/100" class="avatar img-circle" alt="avatar" height="100" width="100">
 
                     </div>
                 </div>
