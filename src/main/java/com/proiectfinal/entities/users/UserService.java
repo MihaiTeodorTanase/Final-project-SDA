@@ -118,9 +118,8 @@ public Optional<UserModel> findById(Long id){
         return userRepository.findById(id);
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> e1f2654f40d0f706f623a88868e9f08b27d10dee
+
+
 }

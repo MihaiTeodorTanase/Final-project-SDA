@@ -35,10 +35,12 @@
 <h1>Filtre</h1>
 
 
-<main class="grid" th:object="${singleBands}"  >
+<main class="grid row" th:object="${singleBands}"  >
 
-    <article th:each="band: ${singleBands}">
-        <img src="http://vectorlogofree.com/wp-content/uploads/2014/03/3672-rdio-circle-icon-vector-icon-vector-eps.png" alt="Sample photo">
+    <article th:each="band: ${singleBands}" class="col-md-4">
+
+        <img src="http://vectorlogofree.com/wp-content/uploads/2014/03/3672-rdio-circle-icon-vector-icon-vector-eps.png"
+              alt="Sample photo" >
         <div class="div">
             <h3 th:text="${band.info.bandName}" class="card-title"></h3>
 
