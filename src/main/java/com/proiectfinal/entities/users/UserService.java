@@ -65,6 +65,9 @@ public class UserService implements UserDetailsService {
             if (newInfo.getNoMembers() == 0) {
                 newInfo.setNoMembers(oldInfo.getNoMembers());
             }
+            if(newInfo.getImage() == null || newInfo.getImage().length==0){
+                newInfo.setImage(oldInfo.getImage());
+            }
             userModel.setInfo(newInfo);
             return Optional.of(userRepository.saveAndFlush(userModel));
         }
@@ -115,6 +118,9 @@ public Optional<UserModel> findById(Long id){
         return userRepository.findById(id);
 }
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> e1f2654f40d0f706f623a88868e9f08b27d10dee
 }
