@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,15 @@ import java.util.List;
 @Controller
 public class MainController {
 
-    @Autowired
+
     private UserService userService;
+
+
+    @Autowired
+    public MainController(UserService userService) {
+        this.userService = userService;
+
+    }
 
     @GetMapping("/")
     public String root() {
@@ -35,7 +43,7 @@ public class MainController {
     public String trupe(Model model) {
         List<UserModel> allbands = new ArrayList<>();
         List<UserModel> allUsers = new ArrayList<>();
-        List<Info> displayBand=new ArrayList<>();
+        List<Info> displayBand = new ArrayList<>();
 
         allUsers = userService.findAll();
 
@@ -45,20 +53,26 @@ public class MainController {
             }
         }
 
-        for(int i=0;i<allbands.size();i++){
-            if(allbands.get(i).getInfo().getBandName()!=null && allbands.get(i).getInfo().getCity()!=null && allbands.get(i).getInfo().getNoMembers()!=0){
+        for (int i = 0; i < allbands.size(); i++) {
+            if (allbands.get(i).getInfo().getBandName() != null && allbands.get(i).getInfo().getCity() != null && allbands.get(i).getInfo().getNoMembers() != 0) {
                 displayBand.add(allbands.get(i).getInfo());
             }
         }
 
 
-        for(Info u:displayBand) {
+        for (Info u : displayBand) {
             System.out.println(u.getBandName());
 
 
         }
 
-        model.addAttribute("bands",displayBand);
+        for(UserModel user:allbands){
+            System.out.println(user.getId());
+        }
+
+
+        model.addAttribute("singleBands", allbands);
+
 
         return "trupe";
     }
@@ -73,6 +87,13 @@ public class MainController {
         return "PubRock";
     }
 
+
+    @GetMapping("/singleBand/{id}")
+    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+        UserModel user = userService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        model.addAttribute("single", user);
+        return "singleBand";
+    }
 
 }
 

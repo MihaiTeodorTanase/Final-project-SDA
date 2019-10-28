@@ -20,7 +20,10 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
     private UserRepository userRepository;
+
 
 
     @Autowired
@@ -108,7 +111,9 @@ public class UserService implements UserDetailsService {
         return userRepository.findByUsername(username);
     }
 
-
+public Optional<UserModel> findById(Long id){
+        return userRepository.findById(id);
+}
 
 
 

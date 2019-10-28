@@ -1,10 +1,6 @@
 <!DOCTYPE html>
-<html lang="ro" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
-    <title>Trupe</title>
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -26,34 +22,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
+    <title>Band</title>
 </head>
 <body>
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<h1>Filtre</h1>
+
+<div th:object="${single}">
+
+    <h1 id="band_title" align="center" th:text="${single.info.bandName}"></h1>
 
 
-<main class="grid" th:object="${singleBands}"  >
 
-    <article th:each="band: ${singleBands}">
-        <img src="http://vectorlogofree.com/wp-content/uploads/2014/03/3672-rdio-circle-icon-vector-icon-vector-eps.png" alt="Sample photo">
-        <div class="div">
-            <h3 th:text="${band.info.bandName}" class="card-title"></h3>
+</div>
 
-            <p> Descriere.....</p>
 
-            <a th:href="@{/singleBand/{id}(id=${band.id})}"  class="btn btn-warning" >Vezi trupa</a>
-            <br>
-            <b align="center" >Numar concerte:</b>
-            <b th:text="${band.info.NoConcerts}" align="center" class="card-text"></b>
-            <br>
-            <b th:align="center" th:text="${band.info.city} "  class="card-text">Oras</b>
-        </div>
-    </article>
 
-</main>
 
 </body>
 </html>

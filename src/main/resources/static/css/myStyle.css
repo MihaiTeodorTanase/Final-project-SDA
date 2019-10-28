@@ -1,3 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+
 #id_inregistrare {
     position: absolute;
     right: 3px;
@@ -323,7 +327,21 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
 }
 
 
+#band_title{
 
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 150px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-shadow: #EDEDED 3px 2px 0;
+    position: relative;
+
+
+}
 
 
 
