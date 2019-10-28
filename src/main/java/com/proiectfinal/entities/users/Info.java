@@ -1,11 +1,8 @@
 package com.proiectfinal.entities.users;
 
-import org.hibernate.type.descriptor.sql.LobTypeMappings;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Lob;
-import java.sql.Blob;
 
 
 @Embeddable
@@ -99,4 +96,5 @@ public class Info {
     public void setImage(byte[] image) {
         this.image = image;
     }
+
 }

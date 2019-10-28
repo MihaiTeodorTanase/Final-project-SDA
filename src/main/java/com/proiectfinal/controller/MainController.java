@@ -9,11 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class MainController {
@@ -84,15 +90,19 @@ public class MainController {
 
     @GetMapping("/clubs/PubRock")
     public String PubRock() {
-        return "PubRock";
+        return "pubRock";
     }
 
 
-    @GetMapping("/singleBand/{id}")
+    @GetMapping("/bands/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
-        UserModel user = userService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
-        model.addAttribute("single", user);
-        return "singleBand";
+        Optional existing = userService.findById(id);
+        if (existing.isPresent()){
+            model.addAttribute("single", existing.get());
+            return "singleBand";
+        }else{
+            return"trupe";
+        }
     }
 
 }

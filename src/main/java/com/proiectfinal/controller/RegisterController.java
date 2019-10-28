@@ -12,12 +12,10 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
@@ -97,7 +95,6 @@ public class RegisterController {
         Optional<UserModel> userModel = userService.findByUsername(user.getUsername());
         model.addAttribute("user", userModel.get().getInfo());
 
-
         return "profile";
     }
 
@@ -140,6 +137,24 @@ public class RegisterController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @GetMapping("/getBandAvatar/{id}")
+    public void getBandAvatar(@PathVariable("id") Long id, HttpServletResponse response) {
+
+        Optional<UserModel> existing = userService.findById(id);
+        System.out.println("A intrat!");
+        if(existing.isPresent()){
+            try{
+                if (existing.get().getInfo().getImage() != null) {
+                    response.getOutputStream().write(existing.get().getInfo().getImage());
+                    response.getOutputStream().close();
+                }else{
+                    response.getOutputStream().write(Files.readAllBytes(Paths.get("src/main/resources/images/emptyProfilePic.png")));
+                    response.getOutputStream().close();
+                }}
+            catch ( IOException e){ e.printStackTrace();}
         }
     }
 

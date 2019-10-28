@@ -25,33 +25,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
 </head>
 <body>
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<h1>Filtre</h1>
+<main class="grid" th:object="${singleBands}">
 
+    <article th:each="band: ${singleBands}">
 
-<main class="grid row" th:object="${singleBands}"  >
-
-    <article th:each="band: ${singleBands}" class="col-md-4">
-
-        <img src="http://vectorlogofree.com/wp-content/uploads/2014/03/3672-rdio-circle-icon-vector-icon-vector-eps.png"
-              alt="Sample photo" >
-        <div class="div">
-            <h3 th:text="${band.info.bandName}" class="card-title"></h3>
-
+        <img id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " alt="Sample photo">
+        <div class="text">
+            <h3 th:text="${band.getInfo().getBandName()}" class="card-title"></h3>
             <p> Descriere.....</p>
-
-            <a th:href="@{/singleBand/{id}(id=${band.id})}"  class="btn btn-warning" >Vezi trupa</a>
+            <a th:href="@{/bands/{id}(id=${band.id})}" class="btn btn-warning">Vezi trupa</a>
             <br>
-            <b align="center" >Numar concerte:</b>
-            <b th:text="${band.info.NoConcerts}" align="center" class="card-text"></b>
+            <b align="center">Numar concerte:</b>
+            <b th:text="${band.info.noConcerts}" align="center" class="card-text"></b>
             <br>
-            <b th:align="center" th:text="${band.info.city} "  class="card-text">Oras</b>
+            <b th:align="center" th:text="${band.info.city} " class="card-text">Oras</b>
         </div>
     </article>
 
