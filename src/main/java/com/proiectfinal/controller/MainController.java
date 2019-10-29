@@ -6,17 +6,10 @@ import com.proiectfinal.entities.users.Info;
 import com.proiectfinal.entities.users.UserModel;
 import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -96,7 +89,7 @@ public class MainController {
 
     @GetMapping("/bands/{id}")
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
-        Optional existing = userService.findById(id);
+        Optional existing = userService.getById(id);
         if (existing.isPresent()){
             model.addAttribute("single", existing.get());
             return "singleBand";

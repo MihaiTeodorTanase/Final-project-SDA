@@ -1,6 +1,5 @@
 package com.proiectfinal.entities.users;
 
-import com.proiectfinal.config.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -21,10 +20,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-
     private UserRepository userRepository;
-
-
 
     @Autowired
     public UserService(UserRepository userRepository) {
@@ -32,7 +28,6 @@ public class UserService implements UserDetailsService {
         this.userRepository = userRepository;
 
     }
-
 
     public UserModel add(UserModel userModel) {
         String pass = userModel.getPassword();
@@ -74,6 +69,14 @@ public class UserService implements UserDetailsService {
         return Optional.empty();
     }
 
+    public Optional<UserModel> getById(Long id) {
+        Optional<UserModel> existing = userRepository.findById(id);
+        if (existing.isPresent()) {
+            return userRepository.findById(id);
+        }
+        return userRepository.findById(id);
+    }
+
     public Optional<UserModel> getByUsername(String username) {
         Optional<UserModel> existing = userRepository.findByUsername(username);
         if (existing.isPresent()) {
@@ -105,21 +108,6 @@ public class UserService implements UserDetailsService {
     }
 
     private List getAuthority(UserModel userModel) {
-
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + userModel.getRole())); //TODO:replace user role by userModel.getRole(),can be user,admin ...
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_" + userModel.getRole()));
     }
-
-
-    public Optional<UserModel> findByUsername(String username) {
-        return userRepository.findByUsername(username);
-    }
-
-public Optional<UserModel> findById(Long id){
-        return userRepository.findById(id);
-}
-
-
-
-
-
 }

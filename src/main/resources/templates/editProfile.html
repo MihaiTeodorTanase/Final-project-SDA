@@ -36,80 +36,82 @@
             <h2 class="card-title mt-3 text-center" align="center">Edit Profile</h2>
             <p class="divider-text"></p>
             <br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="container">
-                            <div class="text-center">
-                                <img th:src="@{/getAvatar}" height="200" width="200" style="border-radius: 50%;" src="//placehold.it/100"
-                                     class="avatar img-circle" alt="avatar" id="previewImg">
-                                <h6>Upload a relevant photo...</h6>
-
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="container">
+                        <div class="text-center">
+                            <img th:src="@{/getAvatar}" height="150" width="150" style="border-radius: 50%;"
+                                 src="//placehold.it/100"
+                                 class="avatar img-circle" alt="avatar" id="previewImg">
+                            <h6>Upload a relevant photo...</h6>
+                            <div class="container">
                                 <input name="avatar" type="file" class="form-control" onchange="loadFile(event)">
                             </div>
                         </div>
                     </div>
+                </div>
 
 
-                    <div class="col-md-8 personal-info" sec:authorize="hasRole('ROLE_Spectator')">
+                <div class="col-md-8 personal-info" sec:authorize="hasRole('ROLE_Spectator')">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">First name:</label>
+                            <div class="col-lg-8">
+                                <input th:field="*{first_name}" class="form-control" type="text" name="First name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Last name:</label>
+                            <div class="col-lg-8">
+                                <input th:field="*{name}" class="form-control" type="text" name="name">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <form sec:authorize="hasRole('ROLE_Trupa')"
+                      th:action="@{/editProfile}" th:object="${user}" method="post">
+                    <div class="col-md-8 personal-info">
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">First name:</label>
+                                <label class="col-lg-3 control-label">Band name:</label>
                                 <div class="col-lg-8">
-                                    <input th:field="*{first_name}" class="form-control" type="text" name="First name">
+                                    <input class="form-control" type="text" name="bandName" th:field="*{bandName}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-3 control-label">Last name:</label>
+                                <label class="col-lg-3 control-label">Number of members:</label>
                                 <div class="col-lg-8">
-                                    <input th:field="*{name}" class="form-control" type="text" name="name">
+                                    <input class="form-control" type="number" name="noMembers"
+                                           th:field="*{noMembers}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">City:</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="text" name="city" th:field="*{city}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">Number of concerts</label>
+                                <div class="col-lg-8">
+                                    <input class="form-control" type="number" name="noConcerts"
+                                           th:field="*{noConcerts}">
                                 </div>
                             </div>
                         </form>
                     </div>
-
-
-                    <form sec:authorize="hasRole('ROLE_Trupa')"
-                          th:action="@{/editProfile}" th:object="${user}" method="post">
-                        <div class="col-md-8 personal-info">
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Band name:</label>
-                                    <div class="col-lg-8">
-                                        <input class="form-control" type="text" name="bandName" th:field="*{bandName}">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Number of members:</label>
-                                    <div class="col-lg-8">
-                                        <input class="form-control" type="number" name="noMembers"
-                                               th:field="*{noMembers}">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">City:</label>
-                                    <div class="col-lg-8">
-                                        <input class="form-control" type="text" name="city" th:field="*{city}">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label">Number of concerts</label>
-                                    <div class="col-lg-8">
-                                        <input class="form-control" type="number" name="noConcerts"
-                                               th:field="*{noConcerts}">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </form>
-                </div>
-                <div class="row">
-                    <div class="container">
-                        <div class="text-right">
-                            <input type="submit" id="profileButton" class="btn" value="Save Changes">
-                            <a id="cancelButton" class="btn" value="Cancel" th:href="@{/profile}">Cancel</a>
-                        </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="container">
+                    <div class="text-right">
+                        <input type="submit" id="profileButton" class="btn" value="Save Changes">
+                        <a id="cancelButton" class="btn" value="Cancel" th:href="@{/profile}">Cancel</a>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </form>
