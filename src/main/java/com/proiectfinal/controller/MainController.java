@@ -39,10 +39,10 @@ public class MainController {
     }
 
     @GetMapping("/bands")
-    public String trupe(Model model) {
+    public String bands(Model model) {
         List<UserModel> allbands = new ArrayList<>();
         List<UserModel> allUsers = new ArrayList<>();
-        List<Info> displayBand = new ArrayList<>();
+        List<UserModel> displayBand = new ArrayList<>();
         allUsers = userService.findAll();
         for (int i = 0; i < allUsers.size(); i++) {
             if (allUsers.get(i).getRole().equals(Role.Trupa)) {
@@ -51,10 +51,10 @@ public class MainController {
         }
         for (int i = 0; i < allbands.size(); i++) {
             if (allbands.get(i).getInfo().getBandName() != null && allbands.get(i).getInfo().getCity() != null && allbands.get(i).getInfo().getNoMembers() != 0) {
-                displayBand.add(allbands.get(i).getInfo());
+                displayBand.add(allbands.get(i));
             }
         }
-        model.addAttribute("singleBands", allbands);
+        model.addAttribute("singleBands", displayBand);
         return "bands";
     }
 
