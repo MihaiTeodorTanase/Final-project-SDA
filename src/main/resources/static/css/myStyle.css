@@ -310,9 +310,13 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
     color: #fff;
 }
 
-#submitReg {
+#submitReg, #profileButton {
     background-color: #900C3F;
-!important;
+    color: white;
+}
+
+#cancelButton{
+    background-color: rgba(144, 12, 63, 0.73);
     color: white;
 }
 
@@ -344,10 +348,6 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
 }
 
 
-
-#col-md-4{
-
-}
 
 
 
