@@ -43,37 +43,19 @@ public class MainController {
         List<UserModel> allbands = new ArrayList<>();
         List<UserModel> allUsers = new ArrayList<>();
         List<Info> displayBand = new ArrayList<>();
-
         allUsers = userService.findAll();
-
         for (int i = 0; i < allUsers.size(); i++) {
             if (allUsers.get(i).getRole().equals(Role.Trupa)) {
                 allbands.add(allUsers.get(i));
             }
         }
-
         for (int i = 0; i < allbands.size(); i++) {
             if (allbands.get(i).getInfo().getBandName() != null && allbands.get(i).getInfo().getCity() != null && allbands.get(i).getInfo().getNoMembers() != 0) {
                 displayBand.add(allbands.get(i).getInfo());
             }
         }
-
-
-        for (Info u : displayBand) {
-            System.out.println(u.getBandName());
-
-
-        }
-
-        for(UserModel user:allbands){
-            System.out.println(user.getId());
-        }
-
-
         model.addAttribute("singleBands", allbands);
-
-
-        return "trupe";
+        return "bands";
     }
 
     @GetMapping("/clubs")
@@ -94,7 +76,7 @@ public class MainController {
             model.addAttribute("single", existing.get());
             return "singleBand";
         }else{
-            return"trupe";
+            return "bands";
         }
     }
 

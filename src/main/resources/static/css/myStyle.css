@@ -73,7 +73,7 @@
     grid-gap: 40px;
     align-items: stretch;
     grid-row-gap: 50px;
-    grid-column-gap: 125px;
+    grid-column-gap: 80px;
 
 }
 
@@ -86,6 +86,7 @@
 .grid > article img {
     max-width: 100%;
     min-width: 99%;
+
 }
 
 .text {
@@ -177,7 +178,8 @@
 
 }
 
-.navbar, .navbar-inverse {
+nav.navbar-dark {
+    z-index: 9999;
     background: #900C3F !important;
     border-color: #000 !important;
     height: 60px;
@@ -185,11 +187,9 @@
 
 
 #id_div_card {
-
-    position: absolute;
-    width: 35%;
-    left: 31%;
-    top: 18%;
+    text-align: center;
+    width: 50%;
+    margin: 20px auto auto;
 
 
 }
@@ -228,9 +228,10 @@
 }
 
 
-#navbarDropdownMenuLink-555 {
+#navbarTogglerDemo03 {
     font-weight: bold !important;
     color: white;
+    background-color: #900C3F;
 }
 
 
@@ -255,9 +256,10 @@
 }
 
 #notificationAnvelope {
-    Margin: auto;
-!important
+    Margin-top: auto;
+    Margin-bottom:auto;
 }
+
 
 form input[id="regUsername"]:focus:invalid, form input[type="email"]:focus:invalid, form input[type="password"]:focus:invalid {
     background-size: 20px;
@@ -349,7 +351,14 @@ form input[id="regUsername"]:valid, form input[type="email"]:valid, form input[t
 
 
 
-
+@media (max-width: 767.98px) {
+    ul.profile {
+        margin-left: 0;
+    }
+    #id_div_card {
+        width: 100%;
+    }
+}
 
 
 

@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="ro" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+</header>
 
 <body>
 
 <div th:fragment="navigationBar" >
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1" >
 
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" th:href="@{/}">
 
-            <img src="https://res-1.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1397192767/f19725201d2a397b94ee076425365421.jpg"
-                 alt="logo" height="30" width="40"/>
-
-
+            <img src="https://www.pngkey.com/png/full/645-6450888_logo-itunes-white-music.png"
+                 alt="logo" height="35" width="40"/>
         </a>
 
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-                aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-            <ul class="navbar-nav mr-auto">
 
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/events}" th:text="#{index.events}"></a>
                 </li>
@@ -34,18 +32,12 @@
                 <li class="nav-item" sec:authorize="hasRole('ROLE_Trupa')">
                     <a th:href="@{/clubs}" class="nav-link">Clubs</a>
                 </li>
-
             </ul>
+<!--            <form class="navbar-nav ml-auto nav-flex-icons">-->
+<!--                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--            </form>-->
 
-            <form class="form-inline">
-                <div class="md-form my-0" id="id_div_search">
-                    <input class="form-control mr-sm-2" type="text" th:placeholder="#{index.search}" aria-label="Search"
-                           id="search_event">
-                </div>
-            </form>
-
-
-            <ul class="navbar-nav" sec:authorize="isAnonymous()">
+            <ul class="navbar-nav ml-auto profile" sec:authorize="isAnonymous()">
                 <li class="nav-item">
 
                     <a class="nav-link" th:href="@{/login}" th:text="#{index.connect}"></a>
@@ -56,7 +48,7 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav ml-auto nav-flex-icons" sec:authorize="isAuthenticated()">
+            <ul class="navbar-nav ml-auto nav-flex-icons profile" sec:authorize="isAuthenticated()">
                 <li class="nav-item" id="notificationAnvelope">
                     <a class="nav-link waves-effect waves-light">1
                         <i class="fas fa-envelope"></i>
@@ -78,11 +70,9 @@
                     </div>
                 </li>
             </ul>
-
         </div>
-
-
     </nav>
 </div>
+
 </body>
 </html>

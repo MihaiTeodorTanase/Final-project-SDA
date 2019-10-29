@@ -50,7 +50,6 @@ public class DataTransferController {
     public void getBandAvatar(@PathVariable("id") Long id, HttpServletResponse response) {
 
         Optional<UserModel> existing = userService.getById(id);
-        System.out.println("A intrat!");
         if(existing.isPresent()){
             try{
                 if (existing.get().getInfo().getImage() != null) {

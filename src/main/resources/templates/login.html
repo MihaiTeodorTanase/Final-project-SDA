@@ -30,10 +30,8 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-
+<div class="container">
 <div class="card" id="id_div_card" th:fragment="form_connect">
-
-
     <h5 class="card-header  white-text text-center py-4" >
         <strong>Conecteaza-te pentru a putea fi la curent cu ultimele evenimente</strong>
     </h5>
@@ -74,14 +72,16 @@
             <button class="btn btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Conecteaza-ma</button>
 
             <!-- Register -->
-            <p><strong>Alaturate comunitatii!</strong>
+            <p>
+            <a th:href="@{/registerForm}"><strong>Alatura-te comunitatii!</strong></a>
+
 
 
         </form>
         <!-- Form -->
 
     </div>
-
+</div>
 
 </div>
 

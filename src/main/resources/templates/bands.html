@@ -33,21 +33,20 @@
 <main class="grid" th:object="${singleBands}">
 
     <article th:each="band: ${singleBands}">
-
-        <img id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " alt="Sample photo">
-        <div class="text">
-            <h3 th:text="${band.getInfo().getBandName()}" class="card-title"></h3>
-            <p> Descriere.....</p>
-            <a th:href="@{/bands/{id}(id=${band.id})}" class="btn btn-warning">Vezi trupa</a>
-            <br>
-            <b align="center">Numar concerte:</b>
-            <b th:text="${band.info.noConcerts}" align="center" class="card-text"></b>
-            <br>
-            <b th:align="center" th:text="${band.info.city} " class="card-text">Oras</b>
-        </div>
+            <img id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " alt="Sample photo">
+            <div class="container text">
+                <h3 th:text="${band.getInfo().getBandName()}" class="card-title"></h3>
+                <p> Descriere.....</p>
+                <a th:href="@{/bands/{id}(id=${band.id})}" class="btn btn-warning">Vezi trupa</a>
+                <br>
+                <b align="center">Numar concerte:</b>
+                <b th:text="${band.info.noConcerts}" align="center" class="card-text"></b>
+                <br>
+                <b th:align="center" th:text="${band.info.city} " class="card-text">Oras</b>
+            </div>
     </article>
 
 </main>
-
+</div>
 </body>
 </html>
