@@ -4,7 +4,7 @@ import com.proiectfinal.entities.users.UserModel;
 import org.hibernate.mapping.List;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -19,7 +19,7 @@ public class EventModel {
 
     private String place;
 
-    private Date date;
+    private LocalDateTime date;
 
     private String city;
 
@@ -63,11 +63,11 @@ public class EventModel {
         this.place = place;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

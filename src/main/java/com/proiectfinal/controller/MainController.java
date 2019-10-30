@@ -2,7 +2,6 @@ package com.proiectfinal.controller;
 
 
 import com.proiectfinal.config.Role;
-import com.proiectfinal.entities.users.Info;
 import com.proiectfinal.entities.users.UserModel;
 import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class MainController {
 
     @GetMapping("/events")
     public String evenimente() {
-        return "evenimente";
+        return "events";
     }
 
     @GetMapping("/bands")
