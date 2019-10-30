@@ -9,25 +9,24 @@
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
-<<<<<<< HEAD
+
 <link href="css/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/myStyle.css" rel="stylesheet">
-=======
+
 <link href="/css/mdb.min.css" rel="stylesheet">
 <!-- Your custom styles (optional) -->
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/myStyle.css" rel="stylesheet">
->>>>>>> eebf8ad42b09b2e40958279d686078242d3a2d63
+
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-=======
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -39,7 +38,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="customscripts/previewImage.js"></script>
->>>>>>> eebf8ad42b09b2e40958279d686078242d3a2d63
+
 
 
 <head>
@@ -49,7 +48,7 @@
 <body>
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
-<<<<<<< HEAD
+
 <div class="container">
     <div class="row justify-content-center" sec:authorize="hasRole('ROLE_Trupa')">
         <div>
@@ -88,128 +87,5 @@
         <!--        </main>-->
     </div>
 </div>
-
-=======
-
-<form    enctype="multipart/form-data"  sec:authorize="hasRole('ROLE_Trupa')">
-    <div class="container">
-        <hr style="visibility: hidden;">
-        <div class="card bg-light">
-            <h2 class="card-title mt-3 text-center" align="center">Create Event</h2>
-            <p class="divider-text"></p>
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="container">
-                        <div class="text-center">
-                            <img  height="150" width="150" style="border-radius: 50%;"
-                                  src="//placehold.it/100"
-                                  class="avatar img-circle" alt="avatar" id="previewImg">
-                            <h6>Upload a relevant photo...</h6>
-                            <div class="container">
-                                <input name="avatar" type="file" class="form-control" onchange="loadFile(event)">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <form method="post">
-                    <div class="col-md-8 personal-info">
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Event name:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="name" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Place:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="place" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Date</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="datetime-local" name="date" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">City:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="city" >
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Number of tickets:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="number" name="noTickets">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-lg-3 control-label">Country:</label>
-                                <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="country" >
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-lg-8">
-                                <label for="Description" class="col-lg-3 control-label">Description:</label>
-                                <textarea class="form-control" id="Description" rows="2" maxlength="200"
-                                          placeholder="Describe your event"></textarea>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </form>
-            </div>
-            <div class="row">
-                <div class="container">
-                    <div class="text-right">
-                        <input type="submit" id="profileButton" class="btn" value="Save Changes">
-                        <a id="cancelButton" class="btn" value="Cancel" >Cancel</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-
-
-<div class="container" sec:authorize="hasRole('ROLE_Spectator')">
-    <main class="grid">
-
-        <article >
-            <div class="container ">
-                <div class="row" id="articleTop">
-
-                    <img class="center img-thumbnail" id="BandAvatar"   style="border-radius: 50%" alt="Sample photo">
-
-                </div>
-                <div class="row">
-                    <div class="text">
-                        <div class="container">
-                            <h3 ></h3>
-                            <p>
-                                <b align="center">Numar concerte:</b>
-                                <b  align="center"></b>
-                            </p>
-                            <p><b>Oras</b></p>
-                        </div>
-
-                        <a  id="checkBand" class="btn">Vezi trupa</a>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-    </main>
-</div>
-
-
-
->>>>>>> eebf8ad42b09b2e40958279d686078242d3a2d63
 </body>
 </html>
