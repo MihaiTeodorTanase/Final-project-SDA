@@ -64,14 +64,14 @@
 
 .grid {
     position: absolute;
-    top: 10%;
-    left: 25%;
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
 
     display: inline-grid;
 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 40px;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
     grid-row-gap: 50px;
     grid-column-gap: 80px;
 
@@ -84,9 +84,27 @@
 }
 
 .grid > article img {
+
     max-width: 100%;
     min-width: 99%;
+}
 
+
+
+#articleTop{
+    min-height: 300px;
+    max-height: 300px;
+    margin: 10px 5px;
+}
+
+#checkBand{
+    background:#900C3F;
+    color: white;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
 }
 
 .text {

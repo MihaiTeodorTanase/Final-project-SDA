@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Trupe</title>
+
+    <title>Bands</title>
 
 
     <meta charset="utf-8">
@@ -12,12 +12,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/myStyle.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/myStyle.css" rel="stylesheet">
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -30,23 +30,32 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
-<main class="grid" th:object="${singleBands}">
+<main class="grid">
+        <article th:each="band: ${singleBands}">
+            <div class="container ">
+                <div class="row" id="articleTop">
 
-    <article th:each="band: ${singleBands}">
-            <img id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " alt="Sample photo">
-            <div class="container text">
-                <h3 th:text="${band.getInfo().getBandName()}" class="card-title"></h3>
-                <p> Descriere.....</p>
-                <a th:href="@{/bands/{id}(id=${band.id})}" class="btn btn-warning">Vezi trupa</a>
-                <br>
-                <b align="center">Numar concerte:</b>
-                <b th:text="${band.info.noConcerts}" align="center" class="card-text"></b>
-                <br>
-                <b th:align="center" th:text="${band.info.city} " class="card-text">Oras</b>
+                    <img class="center" id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " style="border-radius: 50%" alt="Sample photo">
+
+                    </div>
+                <div class="row">
+                    <div class="text">
+                        <div class="container">
+                            <h3 th:text="${band.getInfo().getBandName()}"></h3>
+                            <p>
+                                <b align="center">Numar concerte:</b>
+                                <b th:text="${band.info.noConcerts}" align="center"></b>
+                            </p>
+                            <p><b th:align="center" th:text="${band.info.city} ">Oras</b></p>
+                        </div>
+
+                        <a th:href="@{/bands/{id}(id=${band.id})}" id="checkBand" class="btn">Vezi trupa</a>
+                    </div>
+                </div>
             </div>
-    </article>
-
+        </article>
 </main>
-</div>
+
+
 </body>
 </html>
