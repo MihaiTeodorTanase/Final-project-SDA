@@ -27,11 +27,52 @@
 
 <header th:insert="fragments/navbar.html :: navigationBar"></header>
 
+<form th:object="${single}">
+    <div class="container">
+        <hr style="visibility: hidden;">
+        <div class="card bg-light">
+            <h2 class="card-title mt-3 text-center" align="center">Profile</h2>
+            <div class="container">
+                <p class="divider-text"></p>
+                <br>
+            </div>
+            <div class="row">
+                <!-- left column -->
+
+                <div class="container col-md-3">
+                    <div class="text-center">
+                        <img th:src="@{/getBandAvatar/{id}(id=${single.id})} " src="//placehold.it/100"
+                             class="avatar img-circle" alt="avatar"
+                             height="150" width="150" style="border-radius: 50%;">
+
+                    </div>
+                </div>
+                <!-- edit form column -->
+                <div class="container col-md-9">
+
+                    <div class="container form-horizontal">
+                        <div class="form-group">
+                            <label>Band name:</label><h5 th:text="${single.getInfo().getBandName()}"></h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of members:</label><h5 th:text="${single.getInfo().getNoMembers()}"></h5>
+                        </div>
+                        <div class="form-group">
+                            <label>City:</label><h5 th:text="${single.getInfo().getCity()}"></h5>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of concerts</label><h5 th:text="${single.getInfo().getNoConcerts()}"></h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
 </html>
-
 
 
 </body>

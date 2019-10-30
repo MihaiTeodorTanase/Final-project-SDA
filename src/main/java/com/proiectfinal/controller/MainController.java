@@ -68,7 +68,8 @@ public class MainController {
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         Optional existing = userService.getById(id);
         if (existing.isPresent()){
-            model.addAttribute("single", existing.get());
+            UserModel band = (UserModel) existing.get();
+            model.addAttribute("single", band);
             return "singleBand";
         }else{
             return "bands";
