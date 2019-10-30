@@ -27,20 +27,6 @@ public class Info {
     public Info() {
     }
 
-    public Info(String bandName, int noMembers, String city, int noConcerts, byte[] avatar) {
-        this.bandName = bandName;
-        this.noMembers = noMembers;
-        this.city = city;
-        this.noConcerts = noConcerts;
-        this.image = avatar;
-    }
-
-    public Info(String name, String first_name,byte[] avatar) {
-        this.name = name;
-        this.first_name = first_name;
-        this.image = avatar;
-    }
-
     public String getBandName() {
         return bandName;
     }
