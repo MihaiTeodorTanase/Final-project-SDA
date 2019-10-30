@@ -58,11 +58,6 @@ public class MainController {
         return "bands";
     }
 
-    @GetMapping("/clubs")
-    public String clubs() {
-        return "clubs";
-    }
-
     @GetMapping("/clubs/PubRock")
     public String PubRock() {
         return "pubRock";
