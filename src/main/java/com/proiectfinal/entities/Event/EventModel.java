@@ -29,8 +29,12 @@ public class EventModel {
 
     private String description;
 
+    @Lob
+    @Column(columnDefinition = "BLOB")
+    byte[] image;
+
     @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private UserModel userModel;
 
     private List registeredSpectators;
@@ -113,5 +117,13 @@ public class EventModel {
 
     public void setRegisteredSpectators(List registeredSpectators) {
         this.registeredSpectators = registeredSpectators;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 }
