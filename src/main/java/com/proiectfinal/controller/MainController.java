@@ -2,6 +2,7 @@ package com.proiectfinal.controller;
 
 
 import com.proiectfinal.config.Role;
+import com.proiectfinal.entities.Event.EventModel;
 import com.proiectfinal.entities.users.UserModel;
 import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,6 @@ public class MainController {
     public String root() {
 
         return "index";
-    }
-
-    @GetMapping("/events")
-    public String evenimente() {
-        return "events";
     }
 
     @GetMapping("/bands")
@@ -74,6 +70,7 @@ public class MainController {
             return "bands";
         }
     }
+
 
 
 }

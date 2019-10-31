@@ -2,9 +2,12 @@ package com.proiectfinal.entities.Event;
 
 import com.proiectfinal.entities.users.UserModel;
 import org.hibernate.mapping.List;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -19,6 +22,7 @@ public class EventModel {
 
     private String place;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     private LocalDateTime date;
 
     private String city;
@@ -125,5 +129,11 @@ public class EventModel {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public String getParsedDate(){
+        LocalDateTime thisDateTime = this.getDate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm");
+        return thisDateTime.format(formatter);
     }
 }

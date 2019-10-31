@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="ro" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
-    <meta charset="UTF-8">
+<head xmlns:sec="http://www.w3.org/1999/xhtml">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/myStyle.css" rel="stylesheet">
+
+    <link href="/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/myStyle.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/customscripts/previewImage.js"></script>
     <title>CreateEvent</title>
 </head>
 <body>
-<form    enctype="multipart/form-data"  sec:authorize="hasRole('ROLE_Trupa')">
+<header th:insert="fragments/navbar.html :: navigationBar"></header>
+<br>
+<form enctype="multipart/form-data" method="post" th:object="${event}" th:action="@{/events/createEvent}" sec:authorize="hasRole('ROLE_Trupa')">
     <div class="container">
         <hr style="visibility: hidden;">
         <div class="card bg-light">
@@ -16,12 +43,12 @@
                 <div class="col-md-4">
                     <div class="container">
                         <div class="text-center">
-                            <img  height="150" width="150" style="border-radius: 50%;"
+                            <img height="150" width="150" style="border-radius: 50%;"
                                   src="//placehold.it/100"
                                   class="avatar img-circle" alt="avatar" id="previewImg">
                             <h6>Upload a relevant photo...</h6>
                             <div class="container">
-                                <input name="avatar" type="file" class="form-control" onchange="loadFile(event)">
+                                <input name="eventPicture" type="file" class="form-control" onchange="loadFile(event)">
                             </div>
                         </div>
                     </div>
@@ -33,13 +60,13 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Event name:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="name" >
+                                    <input th:field="*{name}" class="form-control" type="text" name="name" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Place:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="place" >
+                                    <input th:field="*{place}"class="form-control" type="text" name="place" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -51,26 +78,25 @@
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">City:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="city" >
+                                    <input th:field="*{city}" class="form-control" type="text" name="city" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Number of tickets:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="number" name="noTickets">
+                                    <input th:field="*{noTickets}" class="form-control" type="number" name="noTickets">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-3 control-label">Country:</label>
                                 <div class="col-lg-8">
-                                    <input class="form-control" type="text" name="country" >
+                                    <input th:field="*{country}" class="form-control" type="text" name="country" >
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-lg-8">
                                     <label for="Description" class="col-lg-3 control-label">Description:</label>
-                                    <textarea class="form-control" id="Description" rows="2" maxlength="200"
+                                    <textarea th:field="*{description}" class="form-control" id="Description" rows="2" maxlength="200"
                                               placeholder="Describe your event"></textarea>
                                 </div>
                             </div>

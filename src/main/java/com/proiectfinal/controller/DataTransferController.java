@@ -1,5 +1,7 @@
 package com.proiectfinal.controller;
 
+import com.proiectfinal.entities.Event.EventModel;
+import com.proiectfinal.entities.Event.EventService;
 import com.proiectfinal.entities.users.UserModel;
 import com.proiectfinal.entities.users.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +20,11 @@ import java.util.Optional;
 @Controller
 public class DataTransferController {
     private UserService userService;
+    private EventService eventService;
 
     @Autowired
-    public DataTransferController(UserService userService) {
+    public DataTransferController(UserService userService,EventService eventService) {
+        this.eventService = eventService;
         this.userService = userService;
     }
 
@@ -48,12 +52,27 @@ public class DataTransferController {
 
     @GetMapping("/getBandAvatar/{id}")
     public void getBandAvatar(@PathVariable("id") Long id, HttpServletResponse response) {
-
         Optional<UserModel> existing = userService.getById(id);
         if(existing.isPresent()){
             try{
                 if (existing.get().getInfo().getImage() != null) {
                     response.getOutputStream().write(existing.get().getInfo().getImage());
+                    response.getOutputStream().close();
+                }else{
+                    response.getOutputStream().write(Files.readAllBytes(Paths.get("src/main/resources/images/emptyProfilePic.png")));
+                    response.getOutputStream().close();
+                }}
+            catch ( IOException e){ e.printStackTrace();}
+        }
+    }
+
+    @GetMapping("/getEventPhoto/{id}")
+    public void getEventAvatar(@PathVariable("id") Long id, HttpServletResponse response) {
+        Optional<EventModel> existing = eventService.getById(id);
+        if(existing.isPresent()){
+            try{
+                if (existing.get().getImage() != null) {
+                    response.getOutputStream().write(existing.get().getImage());
                     response.getOutputStream().close();
                 }else{
                     response.getOutputStream().write(Files.readAllBytes(Paths.get("src/main/resources/images/emptyProfilePic.png")));

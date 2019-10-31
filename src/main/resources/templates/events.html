@@ -20,25 +20,12 @@
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/myStyle.css" rel="stylesheet">
 
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="customscripts/previewImage.js"></script>
-
 
 
 <head>
@@ -52,39 +39,67 @@
 <div class="container">
     <div class="row justify-content-center" sec:authorize="hasRole('ROLE_Trupa')">
         <div>
-            <button id="checkBand" class="btn form-control"><i class="fas fa-plus"></i> Creeaza eveniment</button>
+            <a th:href="@{/events/createEvent}" id="checkBand" class="btn form-control"><i class="fas fa-plus"></i>
+                Creeaza eveniment</a>
         </div>
         <p class="divider-text"></p>
         <br>
     </div>
-    <div class="row">
-        <!--        <main class="grid">-->
+    <div class="container">
+        <div class="row">
+            <main class="grid">
 
-        <!--            <article th:each="band: ${singleBands}">-->
-        <!--                <div class="container ">-->
-        <!--                    <div class="row" id="articleTop">-->
+                <article th:each="event: ${goodEvents}">
+                    <div class="container ">
+                        <div class="row" id="articleTop">
 
-        <!--                        <img class="center img-thumbnail" id="BandAvatar" th:src="@{/getBandAvatar/{id}(id=${band.id})} " style="border-radius: 50%" alt="Sample photo">-->
+                            <img th:src="@{/getEventPhoto/{id}(id=${event.getId()})} " class="center img-thumbnail"
+                                 id="BandAvatar"
+                                 style="border-radius: 50%" alt="Sample photo">
+                            <!--                                    th:src="@{/getBandAvatar/{id}(id=${band.id})} "-->
+                        </div>
+                        <div class="row">
+                            <div class="text">
+                                <div class="container">
+                                    <div id="flexedDiv">
+                                        <h3 th:text="${event.getName()}"></h3>
+                                        <a class="align-right" id="anchorImage"
+                                           th:href="@{/bands/{id}(id=${event.getUserModel().getId()})}">
+                                            <img
+                                                    id="eventCreator"
+                                                    th:src="@{/getBandAvatar/{id}(id=${event.getUserModel().getId()})} "
+                                                    style="border-radius: 50%" alt="Sample photo">
+                                        </a>
+                                    </div>
 
-        <!--                    </div>-->
-        <!--                    <div class="row">-->
-        <!--                        <div class="text">-->
-        <!--                            <div class="container">-->
-        <!--                                <h3 th:text="${band.getInfo().getBandName()}"></h3>-->
-        <!--                                <p>-->
-        <!--                                    <b align="center">Numar concerte:</b>-->
-        <!--                                    <b th:text="${band.info.noConcerts}" align="center"></b>-->
-        <!--                                </p>-->
-        <!--                                <p><b th:align="center" th:text="${band.info.city} ">Oras</b></p>-->
-        <!--                            </div>-->
 
-        <!--                            <a th:href="@{/bands/{id}(id=${band.id})}" id="checkBand" class="btn">Vezi trupa</a>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </article>-->
+                                    <p th:text="${event.getDescription()}"></p>
+                                    <p>
+                                        <b align="center">Locatie:</b>
+                                        <b th:text="${event.getPlace()}" align="center"></b><br>
+                                        <label th:text="${event.getCity()}" align="center"></label>
+                                        <label th:text="${event.getCountry()}" align="center"></label>
+                                    </p>
+                                    <p>
+                                        <b th:text="${event.getParsedDate()} "></b>
+                                    </p>
+                                    <p>
+                                        <b>Au ramas: </b>
+                                        <b th:text="${event.getNoTickets()} "></b>
+                                        <b> locuri libere !</b>
+                                    </p>
 
-        <!--        </main>-->
+
+                                </div>
+
+                                <!--                                        <a th:href="@{/bands/{id}(id=${band.id})}" id="checkBand" class="btn">Vezi trupa</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </main>
+        </div>
     </div>
 </div>
 </body>

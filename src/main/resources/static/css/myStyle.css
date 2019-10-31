@@ -91,6 +91,18 @@
     max-height: 300px;
     margin: 10px 5px;
 }
+#anchorImage{
+
+}
+#eventCreator{
+    min-width: 25px;
+    max-width: 25px;
+    height: 25px;
+}
+
+#flexedDiv{
+    display: flex !important;
+}
 
 #checkBand{
     background:#900C3F;
